@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Green Agro Health Initiative (GAHI)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #228B22;
+            --dark-green: #1a6b1a;
+            --light-green: #4CAF50;
+            --earth-brown: #8B4513;
+            --beige: #F5F5DC;
+            --light-gray: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--dark-green);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-green);
+        }
+
+        h3 {
+            font-size: 1.6rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-green);
+            color: var(--primary-green);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-green);
+            color: white;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .logo span {
+            color: var(--earth-brown);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        nav ul li a.active {
+            color: var(--primary-green);
+        }
+
+        nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-green);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--primary-green);
+        }
+
+        /* ===== PAGE BANNER ===== */
+        .page-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .page-banner h1 {
+            color: white;
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .page-banner p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* ===== ABOUT CONTENT SECTIONS ===== */
+        .about-section {
+            padding: 80px 0;
+        }
+
+        .about-section:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-content h2 {
+            text-align: center;
+        }
+
+        .about-content h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* ===== VISION MISSION SECTION ===== */
+        .vision-mission {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .vision-box, .mission-box {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .vision-box:hover, .mission-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .vision-icon, .mission-icon {
+            font-size: 3rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .vision-box h3, .mission-box h3 {
+            color: var(--dark-green);
+            margin-bottom: 20px;
+        }
+
+        /* ===== GUIDING PRINCIPLES ===== */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .principle-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .principle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .principle-icon {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .principle-card h4 {
+            color: var(--dark-green);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* ===== FOUNDING STORY ===== */
+        .founding-story {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .story-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .story-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .story-text h3 {
+            margin-bottom: 20px;
+            color: var(--dark-green);
+        }
+
+        /* ===== INFO CARDS ===== */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--primary-green);
+        }
+
+        .info-card i {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .info-card h4 {
+            color: var(--dark-green);
+            margin-bottom: 15px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .page-banner h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: transform 0.5s ease;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .page-banner {
+                padding: 150px 0 80px;
+                margin-top: 60px;
+            }
+            
+            .page-banner h1 {
+                font-size: 2.4rem;
+            }
+            
+            .page-banner p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .vision-mission, .founding-story {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .page-banner h1 {
+                font-size: 2rem;
+            }
+            
+            .vision-box, .mission-box {
+                padding: 30px 20px;
+            }
+            
+            .principle-card, .info-card {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i> GA<span>HI</span>
+            </a>
+            
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="constitution.html">Constitution</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="involved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE BANNER -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>About Green Agro Health Initiative</h1>
+            <p>A youth-led Community Based Organisation transforming agricultural waste into sustainable solutions for soil fertility, clean energy, and community empowerment in Kenya.</p>
+            <a href="#vision" class="btn">Our Vision & Mission</a>
+        </div>
+    </section>
+
+    <!-- PREAMBLE SECTION -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>Our Founding Preamble</h2>
+                <p>We, the founding members of Green Agro Health Initiative (GAHI) a youth-led Community Based Organisation in Kenya committed to transforming agricultural waste into solutions for soil fertility and affordable alternative fuel source, combating antimicrobial resistance (AMR), fostering climate resilient farming, and empowering youth and women – do hereby adopt this Constitution.</p>
+                <p>GAHI shall serve as a voice in the community for responsible antimicrobial practices and sustainable agriculture, equipping young Africans with the knowledge and skills to address climate change, poverty reduction, and illiteracy through innovative, community-driven programs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORGANIZATION DETAILS -->
+    <section class="about-section" style="background-color: var(--light-gray);">
+        <div class="container">
+            <div class="about-content">
+                <h2>Organization Details</h2>
+                <div class="info-cards">
+                    <div class="info-card">
+                        <i class="fas fa-landmark"></i>
+                        <h4>Name & Registration</h4>
+                        <p>Green Agro Health Initiative (GAHI) is registered as a community-based organization (CBO) under the Community Groups (Registration) Regulations, 2025 and complies with all relevant Kenyan laws.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Location</h4>
+                        <p>Our headquarters is located in Nairobi County, Kenya, with operations extending to farming communities across the country. GAHI may establish regional offices, project sites, or coordination centers as approved by the Board.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Our Principles</h4>
+                        <p>GAHI operates as a non-profit, non-political, non-religious, and non-ethnic organization, dedicated to the public good and community development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISION & MISSION -->
+    <section class="about-section" id="vision">
+        <div class="container">
+            <div class="about-content">
+                <h2>Our Vision & Mission</h2>
+                <div class="vision-mission">
+                    <div class="vision-box">
+                        <div class="vision-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Our Vision</h3>
+                        <p>To build resilient, healthy, and sustainable farming communities through climate-smart agriculture, responsible waste management, and innovative community-driven solutions where agriculture meets health and sustainability.</p>
+                    </div>
+                    
+                    <div class="mission-box">
+                        <div class="mission-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p>To promote sustainable waste management, turning waste into opportunity, regenerative agriculture, public health awareness, and climate resilience through innovation, capacity building, and inclusive community-led programs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUIDING PRINCIPLES -->
+    <section class="about-section" style="background-color: var(--light-gray);">
+        <div class="container">
+            <div class="about-content">
+                <h2>Our Guiding Principles</h2>
+                <div class="principles-grid">
+                    <div class="principle-card">
+                        <div class="principle-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4>Integrity & Transparency</h4>
+                        <p>Operate with honesty, openness, and accountability in governance and program implementation.</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <div class="principle-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Community Participation</h4>
+                        <p>Ensure broad community involvement and ownership in decision-making and project execution.</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <div class="principle-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Environmental Stewardship</h4>
+                        <p>Promote conservation and innovative waste-to-value approaches to protect natural resources.</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <div class="principle-icon">
+                            <i class="fas fa-female"></i>
+                        </div>
+                        <h4>Youth & Women Inclusion</h4>
+                        <p>Actively include and empower youth and women in leadership and all programs.</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <div class="principle-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Innovation & Knowledge</h4>
+                        <p>Base interventions on scientific research and innovative solutions for sustainable development.</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <div class="principle-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h4>Equity & Non-Discrimination</h4>
+                        <p>Ensure fairness, equality, and non-discrimination in all activities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDING STORY -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>Our Founding Story</h2>
+                <div class="founding-story">
+                    <div class="story-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Youth farmers in Kenya">
+                    </div>
+                    <div class="story-text">
+                        <h3>Born from Passion for Sustainable Agriculture</h3>
+                        <p>GAHI was founded by a group of passionate young Kenyans who recognized the interconnected challenges of agricultural waste management, antimicrobial resistance, and climate change in their communities.</p>
+                        <p>Seeing the potential in transforming poultry waste from a pollutant into a resource for soil fertility and clean energy, the founders came together in 2025 to establish GAHI as a platform for youth-led innovation in sustainable agriculture.</p>
+                        <p>Our approach combines traditional farming knowledge with modern scientific methods to create practical solutions that benefit both the environment and local communities. We believe that youth and women are key drivers of sustainable change, and we're committed to providing them with the tools and knowledge to lead climate action in their communities.</p>
+                        <a href="team.html" class="btn">Meet Our Founding Team</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-leaf"></i> Green Agro Health Initiative
+                    </a>
+                    <p>A youth-led Community Based Organisation in Kenya committed to transforming agricultural waste into sustainable solutions.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="constitution.html">Constitution</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="involved.html">Get Involved</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi County, Kenya</p>
+                    <p><i class="fas fa-envelope"></i> info@gahi.org</p>
+                    <p><i class="fas fa-phone"></i> +254 700 000 000</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Green Agro Health Initiative (GAHI) - Youth-Led CBO in Kenya. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Image lazy loading simulation
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.story-image img');
+            images.forEach(img => {
+                // In a real implementation, you would add loading="lazy" to the img tag
+                // or implement a more sophisticated lazy loading solution
+            });
+        });
+    </script>
+</body>
+</html>

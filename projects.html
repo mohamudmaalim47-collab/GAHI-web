@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects & Gallery - Green Agro Health Initiative (GAHI)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #228B22;
+            --dark-green: #1a6b1a;
+            --light-green: #4CAF50;
+            --earth-brown: #8B4513;
+            --beige: #F5F5DC;
+            --light-gray: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--dark-green);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-green);
+        }
+
+        h3 {
+            font-size: 1.6rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-green);
+            color: var(--primary-green);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-green);
+            color: white;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .logo span {
+            color: var(--earth-brown);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        nav ul li a.active {
+            color: var(--primary-green);
+        }
+
+        nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-green);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--primary-green);
+        }
+
+        /* ===== PAGE BANNER ===== */
+        .page-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .page-banner h1 {
+            color: white;
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .page-banner p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* ===== PROJECTS CONTENT ===== */
+        .projects-content {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .center-heading {
+            text-align: center;
+        }
+
+        .center-heading h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* ===== PROJECT FILTER ===== */
+        .project-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover {
+            background-color: #f0f7f0;
+            border-color: var(--primary-green);
+        }
+
+        .filter-btn.active {
+            background-color: var(--primary-green);
+            color: white;
+            border-color: var(--primary-green);
+        }
+
+        /* ===== GALLERY GRID ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: var(--transition);
+            height: 300px;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 30px 20px 20px;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--primary-green);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .gallery-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .gallery-description {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        /* ===== LIGHTBOX MODAL ===== */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .lightbox-modal.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-img {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .lightbox-caption {
+            color: white;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 2001;
+        }
+
+        .lightbox-close:hover {
+            color: var(--primary-green);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 0 20px;
+        }
+
+        .lightbox-nav:hover {
+            color: var(--primary-green);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        /* ===== PROJECTS LIST ===== */
+        .projects-list {
+            margin-top: 60px;
+        }
+
+        .project-card {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card:nth-child(even) {
+            grid-template-columns: 2fr 1fr;
+        }
+
+        .project-card:nth-child(even) .project-img {
+            order: 2;
+        }
+
+        .project-card:nth-child(even) .project-info {
+            order: 1;
+        }
+
+        .project-img {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-img img {
+            transform: scale(1.05);
+        }
+
+        .project-info {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .status-planning {
+            background-color: #ffeb3b;
+            color: #333;
+        }
+
+        .status-ongoing {
+            background-color: var(--primary-green);
+            color: white;
+        }
+
+        .status-completed {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .project-meta-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .project-meta-item i {
+            margin-right: 5px;
+            color: var(--primary-green);
+        }
+
+        .project-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .project-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+        }
+
+        .project-features li:last-child {
+            border-bottom: none;
+        }
+
+        .project-features li i {
+            color: var(--primary-green);
+            margin-right: 10px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .page-banner h1 {
+                font-size: 2.8rem;
+            }
+            
+            .project-card,
+            .project-card:nth-child(even) {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-card:nth-child(even) .project-img {
+                order: 1;
+            }
+            
+            .project-card:nth-child(even) .project-info {
+                order: 2;
+            }
+            
+            .project-img {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: transform 0.5s ease;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .page-banner {
+                padding: 150px 0 80px;
+                margin-top: 60px;
+            }
+            
+            .page-banner h1 {
+                font-size: 2.4rem;
+            }
+            
+            .page-banner p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 20px;
+            }
+            
+            .project-info {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .page-banner h1 {
+                font-size: 2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item {
+                height: 250px;
+            }
+            
+            .project-filter {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .project-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .lightbox-nav {
+                font-size: 2rem;
+                padding: 0 10px;
+            }
+            
+            .lightbox-close {
+                top: 10px;
+                right: 15px;
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i> GA<span>HI</span>
+            </a>
+            
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="constitution.html">Constitution</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="involved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE BANNER -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Our Projects & Gallery</h1>
+            <p>Explore our ongoing and completed initiatives, training programs, and community interventions through photos and detailed project descriptions.</p>
+            <a href="#gallery" class="btn">View Gallery</a>
+            <a href="#projects" class="btn btn-outline" style="border-color: white; color: white;">Our Projects</a>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="projects-content" id="gallery">
+        <div class="container">
+            <div class="center-heading">
+                <h2>Photo Gallery</h2>
+                <p>Visual journey through our activities, community engagements, and impact in Kenyan farming communities.</p>
+            </div>
+            
+            <!-- Gallery Filter -->
+            <div class="project-filter">
+                <button class="filter-btn active" data-category="all">All Photos</button>
+                <button class="filter-btn" data-category="training">Training Workshops</button>
+                <button class="filter-btn" data-category="waste">Waste Management</button>
+                <button class="filter-btn" data-category="briquettes">Briquette Production</button>
+                <button class="filter-btn" data-category="community">Community Engagement</button>
+                <button class="filter-btn" data-category="farming">Climate-Smart Farming</button>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Image 1 -->
+                <div class="gallery-item" data-category="training" data-index="0">
+                    <div class="gallery-category">Training Workshops</div>
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Farmers Training Workshop" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">AMR Awareness Workshop</div>
+                        <div class="gallery-description">Training farmers on responsible antibiotic use and antimicrobial resistance in Kiambu County</div>
+                    </div>
+                </div>
+                
+                <!-- Image 2 -->
+                <div class="gallery-item" data-category="waste" data-index="1">
+                    <div class="gallery-category">Waste Management</div>
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Poultry Waste Collection" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Poultry Waste Collection Pilot</div>
+                        <div class="gallery-description">Demonstrating safe collection and handling of poultry manure for composting</div>
+                    </div>
+                </div>
+                
+                <!-- Image 3 -->
+                <div class="gallery-item" data-category="briquettes" data-index="2">
+                    <div class="gallery-category">Briquette Production</div>
+                    <img src="https://images.unsplash.com/photo-1589923186741-b7d59d6b2c4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Briquette Making" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Briquette Production Training</div>
+                        <div class="gallery-description">Youth learning to make clean fuel briquettes from agricultural waste</div>
+                    </div>
+                </div>
+                
+                <!-- Image 4 -->
+                <div class="gallery-item" data-category="community" data-index="3">
+                    <div class="gallery-category">Community Engagement</div>
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Community Meeting" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Community Feedback Session</div>
+                        <div class="gallery-description">Engaging with farmers to understand local needs and priorities</div>
+                    </div>
+                </div>
+                
+                <!-- Image 5 -->
+                <div class="gallery-item" data-category="farming" data-index="4">
+                    <div class="gallery-category">Climate-Smart Farming</div>
+                    <img src="https://images.unsplash.com/photo-1592982537447-7444dc31f8e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Conservation Agriculture" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Conservation Agriculture Demo</div>
+                        <div class="gallery-description">Demonstrating minimum tillage and soil cover techniques</div>
+                    </div>
+                </div>
+                
+                <!-- Image 6 -->
+                <div class="gallery-item" data-category="training" data-index="5">
+                    <div class="gallery-category">Training Workshops</div>
+                    <img src="https://images.unsplash.com/photo-1586773860418-dc22f8b874bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Youth Training" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Youth Agri-Entrepreneurship Training</div>
+                        <div class="gallery-description">Young farmers learning business planning and market access</div>
+                    </div>
+                </div>
+                
+                <!-- Image 7 -->
+                <div class="gallery-item" data-category="waste" data-index="6">
+                    <div class="gallery-category">Waste Management</div>
+                    <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Compost Preparation" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Compost Preparation Workshop</div>
+                        <div class="gallery-description">Teaching proper composting techniques for organic waste</div>
+                    </div>
+                </div>
+                
+                <!-- Image 8 -->
+                <div class="gallery-item" data-category="community" data-index="7">
+                    <div class="gallery-category">Community Engagement</div>
+                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Women's Group" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Women's Group Meeting</div>
+                        <div class="gallery-description">Engaging women in sustainable agriculture decision-making</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS LIST -->
+    <section id="projects" style="background-color: var(--white); padding: 80px 0;">
+        <div class="container">
+            <div class="center-heading">
+                <h2>Our Featured Projects</h2>
+                <p>Detailed overview of our key initiatives and their impact on communities across Kenya.</p>
+            </div>
+            
+            <div class="projects-list">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Poultry Waste Management">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-status status-ongoing">Ongoing</span>
+                        <h3>Poultry Waste-to-Compost Pilot Project</h3>
+                        <p>Transforming poultry manure from a pollutant into valuable organic fertilizer for smallholder farmers in Kiambu County. This pilot project aims to establish a sustainable model for agricultural waste management.</p>
+                        
+                        <div class="project-meta">
+                            <div class="project-meta-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Kiambu County</span>
+                            </div>
+                            <div class="project-meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Dec 2025 - Jun 2026</span>
+                            </div>
+                            <div class="project-meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>150+ Farmers</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="project-features">
+                            <li><i class="fas fa-check"></i> Safe manure collection and handling training</li>
+                            <li><i class="fas fa-check"></i> Composting demonstration centers</li>
+                            <li><i class="fas fa-check"></i> Free compost distribution to farmers</li>
+                            <li><i class="fas fa-check"></i> Environmental pollution reduction</li>
+                        </ul>
+                        
+                        <a href="#" class="btn">View Project Details</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1589923186741-b7d59d6b2c4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Briquette Production">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-status status-planning">Planning Phase</span>
+                        <h3>Clean Energy Briquette Production Initiative</h3>
+                        <p>Developing affordable, clean cooking fuel from agricultural waste to reduce deforestation and indoor air pollution while creating income opportunities for youth and women.</p>
+                        
+                        <div class="project-meta">
+                            <div class="project-meta-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Nairobi & Kajiado Counties</span>
+                            </div>
+                            <div class="project-meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Mar 2026 - Dec 2026</span>
+                            </div>
+                            <div class="project-meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>50 Youth/Women</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="project-features">
+                            <li><i class="fas fa-check"></i> Briquette production training</li>
+                            <li><i class="fas fa-check"></i> Small-scale production units</li>
+                            <li><i class="fas fa-check"></i> Market linkage development</li>
+                            <li><i class="fas fa-check"></i> Clean energy awareness campaigns</li>
+                        </ul>
+                        
+                        <a href="#" class="btn">View Project Details</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AMR Awareness">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-status status-completed">Completed</span>
+                        <h3>AMR Awareness & Responsible Antibiotic Use Campaign</h3>
+                        <p>Community education program on antimicrobial resistance, promoting responsible antibiotic use in both human and animal health to protect public health.</p>
+                        
+                        <div class="project-meta">
+                            <div class="project-meta-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Nairobi Eastlands</span>
+                            </div>
+                            <div class="project-meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Oct - Dec 2025</span>
+                            </div>
+                            <div class="project-meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>300+ Community Members</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="project-features">
+                            <li><i class="fas fa-check"></i> Community workshops on AMR</li>
+                            <li><i class="fas fa-check"></i> Educational materials distribution</li>
+                            <li><i class="fas fa-check"></i> Partnership with local health centers</li>
+                            <li><i class="fas fa-check"></i> Training of community health volunteers</li>
+                        </ul>
+                        
+                        <a href="#" class="btn">View Project Report</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox-modal" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <span class="lightbox-nav lightbox-prev" id="lightbox-prev">
+            <i class="fas fa-chevron-left"></i>
+        </span>
+        <span class="lightbox-nav lightbox-next" id="lightbox-next">
+            <i class="fas fa-chevron-right"></i>
+        </span>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img" id="lightbox-image">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-leaf"></i> Green Agro Health Initiative
+                    </a>
+                    <p>A youth-led Community Based Organisation in Kenya committed to transforming agricultural waste into sustainable solutions.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="constitution.html">Constitution</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="involved.html">Get Involved</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi County, Kenya</p>
+                    <p><i class="fas fa-envelope"></i> info@gahi.org</p>
+                    <p><i class="fas fa-phone"></i> +254 700 000 000</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Green Agro Health Initiative (GAHI) - Youth-Led CBO in Kenya. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Gallery Filter Functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filter = button.getAttribute('data-category');
+                
+                // Show/hide gallery items based on filter
+                galleryItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    
+                    if (filter === 'all' || category === filter) {
+                        item.style.display = 'block';
+                        // Add slight animation
+                        item.style.opacity = '0';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transition = 'opacity 0.3s ease';
+                        }, 10);
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Lightbox Functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+        
+        let currentImageIndex = 0;
+        const images = Array.from(galleryItems);
+        
+        // Open lightbox when gallery item is clicked
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                const caption = item.querySelector('.gallery-title').textContent + ' - ' + item.querySelector('.gallery-description').textContent;
+                
+                currentImageIndex = index;
+                lightboxImage.src = imgSrc;
+                lightboxCaption.textContent = caption;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            });
+        });
+        
+        // Close lightbox
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close lightbox when clicking outside image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Navigation functions
+        function showImage(index) {
+            // Handle wrapping around
+            if (index < 0) index = images.length - 1;
+            if (index >= images.length) index = 0;
+            
+            currentImageIndex = index;
+            const item = images[currentImageIndex];
+            const imgSrc = item.querySelector('img').src;
+            const caption = item.querySelector('.gallery-title').textContent + ' - ' + item.querySelector('.gallery-description').textContent;
+            
+            lightboxImage.src = imgSrc;
+            lightboxCaption.textContent = caption;
+        }
+        
+        // Previous image
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage(currentImageIndex - 1);
+        });
+        
+        // Next image
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage(currentImageIndex + 1);
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            } else if (e.key === 'ArrowLeft') {
+                showImage(currentImageIndex - 1);
+            } else if (e.key === 'ArrowRight') {
+                showImage(currentImageIndex + 1);
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>

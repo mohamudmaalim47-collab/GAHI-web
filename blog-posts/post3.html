@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Waste to Fuel: Our First Briquette Production Trial - GAHI Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #228B22;
+            --dark-green: #1a6b1a;
+            --light-green: #4CAF50;
+            --earth-brown: #8B4513;
+            --beige: #F5F5DC;
+            --light-gray: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--dark-green);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-green);
+        }
+
+        h3 {
+            font-size: 1.6rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-green);
+            color: var(--primary-green);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-green);
+            color: white;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .logo span {
+            color: var(--earth-brown);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        nav ul li a.active {
+            color: var(--primary-green);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--primary-green);
+        }
+
+        /* ===== BLOG POST HEADER ===== */
+        .post-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1589923186741-b7d59d6b2c4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .post-header h1 {
+            color: white;
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .meta-item i {
+            color: var(--primary-green);
+        }
+
+        /* ===== BLOG CONTENT ===== */
+        .blog-post-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            padding: 80px 0;
+        }
+
+        @media (max-width: 992px) {
+            .blog-post-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .blog-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 30px 0;
+            box-shadow: var(--shadow);
+        }
+
+        .image-caption {
+            text-align: center;
+            font-style: italic;
+            color: var(--text-light);
+            margin-top: -20px;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+
+        .highlight-box {
+            background-color: var(--beige);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 5px solid var(--earth-brown);
+        }
+
+        .highlight-box h3 {
+            color: var(--earth-brown);
+            margin-top: 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table th {
+            background-color: var(--primary-green);
+            color: white;
+            text-align: left;
+            padding: 15px;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            color: var(--text-light);
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #f0f7f0;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .process-step {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            border-top: 4px solid var(--primary-green);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .test-results {
+            background-color: #f0f7f0;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-weight: 600;
+            color: var(--dark-green);
+        }
+
+        .result-value {
+            color: var(--text-light);
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .sidebar-widget {
+            margin-bottom: 40px;
+        }
+
+        .sidebar-widget:last-child {
+            margin-bottom: 0;
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .author-box {
+            text-align: center;
+            padding: 25px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .author-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--primary-green);
+        }
+
+        .author-box h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-role {
+            color: var(--primary-green);
+            font-style: italic;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .tags-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            padding: 6px 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            background-color: var(--primary-green);
+            color: white;
+            border-color: var(--primary-green);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .facebook { background-color: #3b5998; }
+        .twitter { background-color: #1da1f2; }
+        .linkedin { background-color: #0077b5; }
+        .whatsapp { background-color: #25d366; }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        /* ===== RELATED POSTS ===== */
+        .related-posts {
+            padding: 60px 0;
+            background-color: var(--light-gray);
+        }
+
+        .center-heading {
+            text-align: center;
+        }
+
+        .center-heading h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .post-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .post-card-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .post-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .post-card:hover .post-card-img img {
+            transform: scale(1.05);
+        }
+
+        .post-card-content {
+            padding: 25px;
+        }
+
+        .post-card-category {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .post-card-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark-green);
+        }
+
+        .post-card-title a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .post-card-title a:hover {
+            color: var(--primary-green);
+        }
+
+        .post-card-excerpt {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .post-header h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: transform 0.5s ease;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .post-header {
+                padding: 150px 0 80px;
+                margin-top: 60px;
+            }
+            
+            .post-header h1 {
+                font-size: 2.4rem;
+            }
+            
+            .post-meta {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .blog-post-container {
+                padding: 60px 0;
+            }
+            
+            .featured-image {
+                height: 300px;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .post-header h1 {
+                font-size: 2rem;
+            }
+            
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                padding: 25px 20px;
+            }
+            
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-leaf"></i> GA<span>HI</span>
+            </a>
+            
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../programs.html">Programs</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../involved.html">Get Involved</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BLOG POST HEADER -->
+    <section class="post-header">
+        <div class="container">
+            <h1>From Waste to Fuel: Our First Briquette Production Trial</h1>
+            <p>Transforming poultry manure and agricultural residues into clean, affordable cooking fuel</p>
+            
+            <div class="post-meta">
+                <div class="meta-item">
+                    <i class="far fa-calendar"></i>
+                    <span>December 5, 2025</span>
+                </div>
+                <div class="meta-item">
+                    <i class="far fa-user"></i>
+                    <span>Mohamed Abass Maalim</span>
+                </div>
+                <div class="meta-item">
+                    <i class="far fa-clock"></i>
+                    <span>7 min read</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-tag"></i>
+                    <span>Waste-to-Energy, Clean Energy, Innovation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG CONTENT -->
+    <section class="blog-post">
+        <div class="container">
+            <div class="blog-post-container">
+                <!-- Main Content -->
+                <div class="blog-content">
+                    <img src="https://images.unsplash.com/photo-1589923186741-b7d59d6b2c4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Briquette Production" class="featured-image">
+                    <p class="image-caption">Testing our first batch of briquettes made from poultry manure and rice husks</p>
+                    
+                    <p>This month, we successfully completed our first trial of briquette production using poultry manure mixed with agricultural residues. The results are promising for creating an affordable, clean alternative fuel source for rural communities while addressing the dual challenges of agricultural waste management and energy poverty.</p>
+                    
+                    <h2>The Problem: Energy Poverty and Environmental Degradation</h2>
+                    <p>In many rural Kenyan communities, families rely on firewood and charcoal for cooking. This contributes to deforestation, indoor air pollution, and significant health risks. Meanwhile, agricultural waste like poultry manure and crop residues are often burned openly or left to decompose, releasing methane and contributing to greenhouse gas emissions.</p>
+                    
+                    <p>Our research in Kajiado County revealed that:</p>
+                    <ul style="margin-left: 20px; margin-bottom: 20px; color: var(--text-light);">
+                        <li style="margin-bottom: 8px;">85% of households use firewood or charcoal as their primary cooking fuel</li>
+                        <li style="margin-bottom: 8px;">Families spend 20-30% of their income on cooking fuel</li>
+                        <li style="margin-bottom: 8px;">Women and children spend 10-15 hours per week collecting firewood</li>
+                        <li>Respiratory illnesses from indoor smoke are a leading health concern</li>
+                    </ul>
+                    
+                    <div class="highlight-box">
+                        <h3>Our Solution: Waste-to-Energy Briquettes</h3>
+                        <p>By transforming agricultural waste into fuel briquettes, we address multiple challenges simultaneously:</p>
+                        <ul style="list-style: none; margin: 15px 0;">
+                            <li style="padding: 8px 0;"><i class="fas fa-check" style="color: var(--primary-green); margin-right: 10px;"></i> Reduces waste disposal problems</li>
+                            <li style="padding: 8px 0;"><i class="fas fa-check" style="color: var(--primary-green); margin-right: 10px;"></i> Provides affordable, clean cooking fuel</li>
+                            <li style="padding: 8px 0;"><i class="fas fa-check" style="color: var(--primary-green); margin-right: 10px;"></i> Creates income opportunities through production and sales</li>
+                            <li style="padding: 8px 0;"><i class="fas fa-check" style="color: var(--primary-green); margin-right: 10px;"></i> Reduces deforestation and indoor air pollution</li>
+                        </ul>
+                    </div>
+                    
+                    <h2>The Production Process: Step by Step</h2>
+                    
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <h3>Material Collection</h3>
+                            <p>Collecting dry poultry manure and agricultural residues (rice husks, maize cobs, sawdust). Proper drying is essential for efficient combustion.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <h3>Grinding & Mixing</h3>
+                            <p>Grinding materials to uniform size and mixing in optimal ratios. Our trials tested different manure-to-biomass ratios for best results.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <h3>Binding & Molding</h3>
+                            <p>Adding a natural binder (cassava starch) and using manual presses to form consistent briquettes. Simple, locally-made equipment keeps costs low.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <h3>Drying & Curing</h3>
+                            <p>Sun-drying briquettes for 3-5 days to achieve optimal moisture content (below 15%). Proper drying ensures clean burning and high heat output.</p>
+                        </div>
+                    </div>
+                    
+                    <h2>Testing Different Formulations</h2>
+                    <p>We experimented with several formulations to find the optimal mix. Each batch was tested for burn time, heat output, smoke production, and ease of ignition.</p>
+                    
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Formulation</th>
+                                <th>Burn Time</th>
+                                <th>Heat Output</th>
+                                <th>Smoke Level</th>
+                                <th>Overall Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>70% manure, 30% rice husks</td>
+                                <td>45 minutes</td>
+                                <td>High</td>
+                                <td>Low smoke</td>
+                                <td>Excellent</td>
+                            </tr>
+                            <tr>
+                                <td>60% manure, 40% sawdust</td>
+                                <td>50 minutes</td>
+                                <td>Medium-High</td>
+                                <td>Very low smoke</td>
+                                <td>Very Good</td>
+                            </tr>
+                            <tr>
+                                <td>50% manure, 50% maize cobs</td>
+                                <td>40 minutes</td>
+                                <td>Medium</td>
+                                <td>Moderate smoke</td>
+                                <td>Good</td>
+                            </tr>
+                            <tr>
+                                <td>80% manure, 20% rice husks</td>
+                                <td>35 minutes</td>
+                                <td>Medium</td>
+                                <td>High smoke</td>
+                                <td>Fair</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h2>Test Results and Performance</h2>
+                    
+                    <div class="test-results">
+                        <div class="result-item">
+                            <span class="result-label">Optimal Formulation:</span>
+                            <span class="result-value">70% poultry manure, 30% rice husks</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Average Burn Time:</span>
+                            <span class="result-value">45 minutes per briquette</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Heat Output:</span>
+                            <span class="result-value">Comparable to charcoal, higher than firewood</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Smoke Production:</span>
+                            <span class="result-value">70% less than traditional firewood</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Ash Content:</span>
+                            <span class="result-value">15-20% (can be used as fertilizer)</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Production Cost:</span>
+                            <span class="result-value">KES 20 per kg (50% cheaper than charcoal)</span>
+                        </div>
+                    </div>
+                    
+                    <h2>Field Testing with Community Members</h2>
+                    <p>We conducted practical cooking tests with 10 households in Kajiado to gather real-world feedback. Participants used the briquettes for everyday cooking tasks and provided valuable insights.</p>
+                    
+                    <blockquote style="border-left: 4px solid var(--primary-green); padding-left: 20px; margin: 25px 0; font-style: italic; color: var(--text-light);">
+                        "I was skeptical at first, but these briquettes cook faster than the firewood I usually use. There's much less smoke, so my eyes don't burn while cooking. The best part is knowing we're not cutting down trees for fuel."<br>
+                        <strong style="color: var(--dark-green); display: block; margin-top: 10px;">- Naomi Chebet, Kajiado Household</strong>
+                    </blockquote>
+                    
+                    <p>Another participant, Samuel Kiprop, noted that the briquettes produced less ash than charcoal, making cleanup easier. Several households reported that food cooked with the briquettes had a better taste compared to food cooked over smoky firewood.</p>
+                    
+                    <h2>Economic Analysis and Income Potential</h2>
+                    <p>Beyond environmental benefits, briquette production offers significant economic opportunities:</p>
+                    
+                    <ul style="margin-left: 20px; margin-bottom: 20px; color: var(--text-light);">
+                        <li style="margin-bottom: 8px;"><strong>Production Cost:</strong> KES 20 per kg (including materials, labor, and overhead)</li>
+                        <li style="margin-bottom: 8px;"><strong>Market Price:</strong> KES 40-50 per kg (charcoal sells for KES 80-100 per kg)</li>
+                        <li style="margin-bottom: 8px;"><strong>Profit Margin:</strong> KES 20-30 per kg</li>
+                        <li style="margin-bottom: 8px;"><strong>Monthly Production Capacity:</strong> 500-1000 kg per small production unit</li>
+                        <li><strong>Potential Monthly Income:</strong> KES 10,000-30,000 per producer</li>
+                    </ul>
+                    
+                    <p>We're developing a business model where youth and women's groups can establish small briquette production enterprises, creating jobs while addressing energy needs in their communities.</p>
+                    
+                    <h2>Challenges and Solutions</h2>
+                    
+                    <h3>Challenge 1: Odor During Production</h3>
+                    <p>Fresh poultry manure has a strong odor that can be off-putting during processing.<br>
+                    <strong>Solution:</strong> Using properly dried manure significantly reduces odor. Adding aromatic herbs like lemongrass to the mix can also help.</p>
+                    
+                    <h3>Challenge 2: Seasonal Availability of Materials</h3>
+                    <p>Agricultural residues are more abundant after harvest seasons.<br>
+                    <strong>Solution:</strong> Establishing storage systems and diversifying material sources (combining different types of residues).</p>
+                    
+                    <h3>Challenge 3: Market Acceptance</h3>
+                    <p>Some community members were initially hesitant to use "manure briquettes."<br>
+                    <strong>Solution:</strong> Demonstration cooking sessions and testimonials from early adopters helped overcome this barrier.</p>
+                    
+                    <h3>Challenge 4: Equipment Access</h3>
+                    <p>Commercial briquette presses are expensive and not readily available.<br>
+                    <strong>Solution:</strong> We've designed simple manual presses that can be made locally using basic materials and skills.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Environmental Impact Assessment</h3>
+                        <p>Our preliminary assessment shows significant environmental benefits:</p>
+                        <ul style="list-style: none; margin: 15px 0;">
+                            <li style="padding: 8px 0;"><i class="fas fa-tree" style="color: var(--primary-green); margin-right: 10px;"></i> 1 ton of briquettes saves approximately 5-7 trees from being cut for charcoal</li>
+                            <li style="padding: 8px 0;"><i class="fas fa-smog" style="color: var(--primary-green); margin-right: 10px;"></i> 70-80% reduction in indoor air pollutants compared to traditional firewood</li>
+                            <li style="padding: 8px 0;"><i class="fas fa-trash" style="color: var(--primary-green); margin-right: 10px;"></i> Diverts 1.5 tons of agricultural waste from open burning or landfill per month</li>
+                            <li style="padding: 8px 0;"><i class="fas fa-fire" style="color: var(--primary-green); margin-right: 10px;"></i> Carbon-neutral energy source (carbon released equals carbon absorbed during plant growth)</li>
+                        </ul>
+                    </div>
+                    
+                    <h2>The Road Ahead: Scaling Up</h2>
+                    <p>Based on our successful trial, we're planning to:</p>
+                    
+                    <ol style="margin-left: 20px; margin-bottom: 20px; color: var(--text-light);">
+                        <li style="margin-bottom: 8px;">Establish 5 community briquette production units in Kajiado and Nairobi counties</li>
+                        <li style="margin-bottom: 8px;">Train 50 youth and women in briquette production and business management</li>
+                        <li style="margin-bottom: 8px;">Develop partnerships with institutions (schools, hospitals) as bulk buyers</li>
+                        <li style="margin-bottom: 8px;">Conduct larger-scale field trials with 100+ households</li>
+                        <li>Explore carbon credit opportunities through verified emission reductions</li>
+                    </ol>
+                    
+                    <p>We're also researching value-added products, such as briquettes infused with mosquito-repelling herbs or specially formulated for specific cooking needs (fast-cooking vs. slow-cooking varieties).</p>
+                    
+                    <div class="highlight-box">
+                        <h3>How You Can Support This Initiative</h3>
+                        <p>This waste-to-energy initiative has tremendous potential for scale and impact. You can help by:</p>
+                        <ul style="list-style: none; margin: 15px 0;">
+                            <li style="padding: 8px 0;"><i class="fas fa-check" style="color: var(--primary-green); margin-right: 10px;"></i> Donating to help us establish more production units</li>
+                            <li style="padding: 8px 0;"><i class="fas fa-check" style="color: var(--primary-green); margin-right: 10px;"></i> Sharing our work with potential partners or investors</li>
+                            <li style="padding: 8px 0;"><i class="fas fa-check" style="color: var(--primary-green); margin-right: 10px;"></i> Volunteering your expertise in engineering, business, or renewable energy</li>
+                            <li style="padding: 8px 0;"><i class="fas fa-check" style="color: var(--primary-green); margin-right: 10px;"></i> Connecting us with institutions interested in clean cooking solutions</li>
+                        </ul>
+                        <a href="../involved.html" class="btn" style="margin-top: 15px;">Support Clean Energy Solutions</a>
+                    </div>
+                    
+                    <p>This briquette production trial demonstrates that sustainable solutions often come from seeing "waste" as a resource. By transforming poultry manure and agricultural residues into clean cooking fuel, we're addressing multiple Sustainable Development Goals simultaneously: affordable and clean energy (SDG 7), responsible consumption and production (SDG 12), climate action (SDG 13), and decent work and economic growth (SDG 8).</p>
+                </div>
+                
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Author Box -->
+                    <div class="sidebar-widget">
+                        <div class="author-box">
+                            <div class="author-avatar">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h4>Mohamed Abass Maalim</h4>
+                            <span class="author-role">Founder & Executive Director, GAHI</span>
+                            <p>Mohamed leads GAHI's vision for sustainable agriculture and clean energy solutions. With a background in environmental science, he drives innovation in waste-to-value initiatives.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Share Widget -->
+                    <div class="sidebar-widget">
+                        <h3>Share This Post</h3>
+                        <div class="share-buttons">
+                            <a href="#" class="share-btn facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="share-btn twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="share-btn linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="share-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Tags Widget -->
+                    <div class="sidebar-widget">
+                        <h3>Tags</h3>
+                        <div class="tags-list">
+                            <a href="#" class="tag">Briquettes</a>
+                            <a href="#" class="tag">Clean Energy</a>
+                            <a href="#" class="tag">Waste-to-Energy</a>
+                            <a href="#" class="tag">Renewable Energy</a>
+                            <a href="#" class="tag">Cooking Fuel</a>
+                            <a href="#" class="tag">Circular Economy</a>
+                            <a href="#" class="tag">Innovation</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Recent Posts Widget -->
+                    <div class="sidebar-widget">
+                        <h3>Recent Posts</h3>
+                        <div style="margin-top: 20px;">
+                            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #ddd;">
+                                <h4 style="font-size: 1rem; margin-bottom: 5px;">
+                                    <a href="post1.html">Launching Our Pilot Poultry Waste Management Project</a>
+                                </h4>
+                                <span style="font-size: 0.8rem; color: var(--text-light);">Dec 15, 2025</span>
+                            </div>
+                            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #ddd;">
+                                <h4 style="font-size: 1rem; margin-bottom: 5px;">
+                                    <a href="post2.html">Understanding Antimicrobial Resistance</a>
+                                </h4>
+                                <span style="font-size: 0.8rem; color: var(--text-light);">Dec 10, 2025</span>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1rem; margin-bottom: 5px;">
+                                    <a href="#">Youth Agri-Entrepreneurship Training</a>
+                                </h4>
+                                <span style="font-size: 0.8rem; color: var(--text-light);">Nov 28, 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- RELATED POSTS -->
+    <section class="related-posts">
+        <div class="container">
+            <div class="center-heading">
+                <h2>Related Posts</h2>
+                <p>Explore more stories about our clean energy and innovation initiatives</p>
+            </div>
+            
+            <div class="posts-grid">
+                <!-- Related Post 1 -->
+                <div class="post-card">
+                    <div class="post-card-img">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Biogas Production">
+                    </div>
+                    <div class="post-card-content">
+                        <span class="post-card-category">Clean Energy</span>
+                        <h3 class="post-card-title"><a href="post1.html">Exploring Small-Scale Biogas Production</a></h3>
+                        <p class="post-card-excerpt">How we're testing biogas digesters that convert animal waste into cooking gas for rural households.</p>
+                        <a href="post1.html" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- Related Post 2 -->
+                <div class="post-card">
+                    <div class="post-card-img">
+                        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Solar Energy">
+                    </div>
+                    <div class="post-card-content">
+                        <span class="post-card-category">Renewable Energy</span>
+                        <h3 class="post-card-title"><a href="post2.html">Solar-Powered Solutions for Farming Communities</a></h3>
+                        <p class="post-card-excerpt">Implementing solar irrigation and lighting systems to reduce dependence on fossil fuels.</p>
+                        <a href="post2.html" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- Related Post 3 -->
+                <div class="post-card">
+                    <div class="post-card-img">
+                        <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Women in Energy">
+                    </div>
+                    <div class="post-card-content">
+                        <span class="post-card-category">Women Empowerment</span>
+                        <h3 class="post-card-title"><a href="post3.html">Women Leading Clean Energy Enterprises</a></h3>
+                        <p class="post-card-excerpt">How women's groups are becoming entrepreneurs in the renewable energy sector.</p>
+                        <a href="post3.html" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="../index.html" class="footer-logo">
+                        <i class="fas fa-leaf"></i> Green Agro Health Initiative
+                    </a>
+                    <p>A youth-led Community Based Organisation in Kenya committed to transforming agricultural waste into sustainable solutions.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../programs.html">Programs</a></li>
+                        <li><a href="../team.html">Our Team</a></li>
+                        <li><a href="../constitution.html">Constitution</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><a href="../involved.html">Get Involved</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi County, Kenya</p>
+                    <p><i class="fas fa-envelope"></i> info@gahi.org</p>
+                    <p><i class="fas fa-phone"></i> +254 700 000 000</p>
+                    <p><i class="fas fa-envelope"></i> energy@gahi.org (Energy Programs)</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Green Agro Health Initiative (GAHI) - Youth-Led CBO in Kenya. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Share buttons functionality
+        document.querySelectorAll('.share-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const url = window.location.href;
+                const title = document.title;
+                
+                let shareUrl = '';
+                
+                if (this.classList.contains('facebook')) {
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                } else if (this.classList.contains('twitter')) {
+                    shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`;
+                } else if (this.classList.contains('linkedin')) {
+                    shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`;
+                } else if (this.classList.contains('whatsapp')) {
+                    shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(title + ' ' + url)}`;
+                }
+                
+                if (shareUrl) {
+                    window.open(shareUrl, '_blank', 'width=600,height=400');
+                }
+            });
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Reading time calculation
+        document.addEventListener('DOMContentLoaded', () => {
+            const article = document.querySelector('.blog-content');
+            if (article) {
+                const text = article.textContent || article.innerText;
+                const wordCount = text.trim().split(/\s+/).length;
+                const readingTime = Math.ceil(wordCount / 200); // 200 words per minute
+                
+                // Update reading time in meta if exists
+                const readingTimeElement = document.querySelector('.fa-clock').parentElement;
+                if (readingTimeElement && readingTimeElement.querySelector('span')) {
+                    readingTimeElement.querySelector('span').textContent = `${readingTime} min read`;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

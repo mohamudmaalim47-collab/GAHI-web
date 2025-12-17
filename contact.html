@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Green Agro Health Initiative (GAHI)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #228B22;
+            --dark-green: #1a6b1a;
+            --light-green: #4CAF50;
+            --earth-brown: #8B4513;
+            --beige: #F5F5DC;
+            --light-gray: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--dark-green);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-green);
+        }
+
+        h3 {
+            font-size: 1.6rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-green);
+            color: var(--primary-green);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-green);
+            color: white;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .logo span {
+            color: var(--earth-brown);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        nav ul li a.active {
+            color: var(--primary-green);
+        }
+
+        nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-green);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--primary-green);
+        }
+
+        /* ===== PAGE BANNER ===== */
+        .page-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .page-banner h1 {
+            color: white;
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .page-banner p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* ===== CONTACT CONTENT ===== */
+        .contact-content {
+            padding: 80px 0;
+        }
+
+        .center-heading {
+            text-align: center;
+        }
+
+        .center-heading h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* ===== CONTACT CONTAINER ===== */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== CONTACT INFO ===== */
+        .contact-info {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .contact-method:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            color: var(--dark-green);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .contact-details p {
+            margin-bottom: 5px;
+            color: var(--text-light);
+        }
+
+        .contact-link {
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .contact-link:hover {
+            color: var(--dark-green);
+            text-decoration: underline;
+        }
+
+        /* ===== CONTACT FORM ===== */
+        .contact-form-container {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-green);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 2px rgba(34, 139, 34, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-message {
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+
+        .form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+
+        /* ===== MAP SECTION ===== */
+        .map-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .map-container {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 450px;
+            position: relative;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: #e9ecef;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+        }
+
+        .map-placeholder i {
+            font-size: 4rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        /* ===== TEAM CONTACTS ===== */
+        .team-contacts {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-contact-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-green);
+        }
+
+        .team-contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--primary-green);
+        }
+
+        .team-contact-card h4 {
+            color: var(--dark-green);
+            margin-bottom: 5px;
+        }
+
+        .team-role {
+            color: var(--primary-green);
+            font-style: italic;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .team-email {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* ===== OFFICE HOURS ===== */
+        .office-hours {
+            background-color: var(--beige);
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 40px;
+            border-left: 5px solid var(--earth-brown);
+        }
+
+        .office-hours h3 {
+            color: var(--earth-brown);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .hours-table tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .hours-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .hours-table td {
+            padding: 12px 15px;
+        }
+
+        .hours-table td:first-child {
+            font-weight: 600;
+            color: var(--dark-green);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .page-banner h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: transform 0.5s ease;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .page-banner {
+                padding: 150px 0 80px;
+                margin-top: 60px;
+            }
+            
+            .page-banner h1 {
+                font-size: 2.4rem;
+            }
+            
+            .page-banner p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .contact-info,
+            .contact-form-container {
+                padding: 30px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-container {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .page-banner h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-method {
+                flex-direction: column;
+            }
+            
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-contact-card {
+                padding: 25px 20px;
+            }
+            
+            .office-hours {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i> GA<span>HI</span>
+            </a>
+            
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="constitution.html">Constitution</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="involved.html">Get Involved</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE BANNER -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Contact Green Agro Health Initiative</h1>
+            <p>Get in touch with our team for inquiries, partnerships, volunteer opportunities, or to learn more about our work transforming agricultural waste into sustainable solutions.</p>
+            <a href="#contact-form" class="btn">Send Us a Message</a>
+            <a href="#locations" class="btn btn-outline" style="border-color: white; color: white;">Our Locations</a>
+        </div>
+    </section>
+
+    <!-- CONTACT CONTENT -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="center-heading">
+                <h2>Get In Touch</h2>
+                <p>We're here to answer your questions and welcome collaboration opportunities.</p>
+            </div>
+            
+            <div class="contact-container">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Our Headquarters</h4>
+                            <p>Nairobi County, Kenya</p>
+                            <p>Operations extending to farming communities across the country</p>
+                            <p style="margin-top: 10px; font-style: italic;">Regional offices and project sites established as needed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email Us</h4>
+                            <p><a href="mailto:info@gahi.org" class="contact-link">info@gahi.org</a> - General Inquiries</p>
+                            <p><a href="mailto:partnerships@gahi.org" class="contact-link">partnerships@gahi.org</a> - Partnerships</p>
+                            <p><a href="mailto:volunteer@gahi.org" class="contact-link">volunteer@gahi.org</a> - Volunteering</p>
+                            <p><a href="mailto:donations@gahi.org" class="contact-link">donations@gahi.org</a> - Donations</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Call Us</h4>
+                            <p><a href="tel:+254700000000" class="contact-link">+254 700 000 000</a> - Office Line</p>
+                            <p><a href="tel:+254711111111" class="contact-link">+254 711 111 111</a> - Program Inquiries</p>
+                            <p style="margin-top: 10px;">Office Hours: Monday - Friday, 8:00 AM - 5:00 PM EAT</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Follow Us</h4>
+                            <p>Stay connected and updated on our latest activities and impact</p>
+                            <div class="social-icons" style="margin-top: 15px;">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form-container" id="contact-form">
+                    <div class="form-message" id="form-message"></div>
+                    
+                    <form id="contact-form-element">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-name">Full Name *</label>
+                                <input type="text" id="contact-name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-email">Email Address *</label>
+                                <input type="email" id="contact-email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-phone">Phone Number</label>
+                            <input type="tel" id="contact-phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-subject">Subject *</label>
+                            <select id="contact-subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="volunteer">Volunteering</option>
+                                <option value="donation">Donation Inquiry</option>
+                                <option value="media">Media & Press</option>
+                                <option value="program">Program Information</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-message">Message *</label>
+                            <textarea id="contact-message" name="message" rows="6" placeholder="Please write your message here..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <section class="map-section" id="locations">
+        <div class="container">
+            <div class="center-heading">
+                <h2>Our Operational Areas</h2>
+                <p>GAHI operates primarily in Nairobi County with outreach programs extending to farming communities across Kenya.</p>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Nairobi County, Kenya</h3>
+                    <p>Interactive map would be embedded here with Google Maps API</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem;">Coordinates: -1.2921° S, 36.8219° E</p>
+                </div>
+                
+                <!-- In a real implementation, you would embed Google Maps here:
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63820.12271300624!2d36.74964261278481!3d-1.3032093676357087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1b1c4a2e7c9d%3A0x4d5b3b3b3b3b3b3b!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1234567890123!5m2!1sen!2ske"
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+                -->
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
+                <div style="text-align: center; padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
+                    <i class="fas fa-city" style="font-size: 2rem; color: var(--primary-green); margin-bottom: 15px;"></i>
+                    <h4>Headquarters</h4>
+                    <p>Nairobi County</p>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">Administrative and coordination center</p>
+                </div>
+                
+                <div style="text-align: center; padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
+                    <i class="fas fa-tractor" style="font-size: 2rem; color: var(--primary-green); margin-bottom: 15px;"></i>
+                    <h4>Pilot Project Site</h4>
+                    <p>Kiambu County</p>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">Poultry waste management pilot</p>
+                </div>
+                
+                <div style="text-align: center; padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
+                    <i class="fas fa-users" style="font-size: 2rem; color: var(--primary-green); margin-bottom: 15px;"></i>
+                    <h4>Community Outreach</h4>
+                    <p>Multiple Counties</p>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">Training and awareness programs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM CONTACTS -->
+    <section class="team-contacts">
+        <div class="container">
+            <div class="center-heading">
+                <h2>Contact Our Team Directly</h2>
+                <p>Reach out to specific team members for specialized inquiries.</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-contact-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h4>Mohamed Abass Maalim</h4>
+                    <span class="team-role">Founder & Executive Director</span>
+                    <a href="mailto:chairperson@gahi.org" class="team-email">chairperson@gahi.org</a>
+                    <p style="font-size: 0.9rem;">Strategic direction, partnerships, and overall leadership</p>
+                </div>
+                
+                <div class="team-contact-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Mohamud Abdirahman Haji</h4>
+                    <span class="team-role">Director of Operations & Finance</span>
+                    <a href="mailto:finance@gahi.org" class="team-email">finance@gahi.org</a>
+                    <p style="font-size: 0.9rem;">Financial matters, operations, and resource management</p>
+                </div>
+                
+                <div class="team-contact-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h4>Osman Adan Abdi</h4>
+                    <span class="team-role">Head of Programs</span>
+                    <a href="mailto:programs@gahi.org" class="team-email">programs@gahi.org</a>
+                    <p style="font-size: 0.9rem;">Program implementation, field activities, and training</p>
+                </div>
+                
+                <div class="team-contact-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Hanan Adan Alio</h4>
+                    <span class="team-role">Head of Youth, Women & Research</span>
+                    <a href="mailto:youth@gahi.org" class="team-email">youth@gahi.org</a>
+                    <p style="font-size: 0.9rem;">Youth/women empowerment and research collaborations</p>
+                </div>
+                
+                <div class="team-contact-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h4>Mohamed Ali Adan</h4>
+                    <span class="team-role">Head of Communications & Partnerships</span>
+                    <a href="mailto:communications@gahi.org" class="team-email">communications@gahi.org</a>
+                    <p style="font-size: 0.9rem;">Media, advocacy, and partnership inquiries</p>
+                </div>
+                
+                <div class="team-contact-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h4>General Inquiries</h4>
+                    <span class="team-role">Information Desk</span>
+                    <a href="mailto:info@gahi.org" class="team-email">info@gahi.org</a>
+                    <p style="font-size: 0.9rem;">General questions and information requests</p>
+                </div>
+            </div>
+            
+            <!-- Office Hours -->
+            <div class="office-hours">
+                <h3>Office Hours & Response Times</h3>
+                <table class="hours-table">
+                    <tr>
+                        <td>Monday - Friday</td>
+                        <td>8:00 AM - 5:00 PM EAT (East Africa Time)</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>9:00 AM - 1:00 PM EAT (By appointment only)</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday & Public Holidays</td>
+                        <td>Closed</td>
+                    </tr>
+                    <tr>
+                        <td>Email Response Time</td>
+                        <td>Within 24-48 hours on business days</td>
+                    </tr>
+                    <tr>
+                        <td>Urgent Inquiries</td>
+                        <td>Please call our office line during business hours</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-leaf"></i> Green Agro Health Initiative
+                    </a>
+                    <p>A youth-led Community Based Organisation in Kenya committed to transforming agricultural waste into sustainable solutions.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="constitution.html">Constitution</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="involved.html">Get Involved</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi County, Kenya</p>
+                    <p><i class="fas fa-envelope"></i> info@gahi.org</p>
+                    <p><i class="fas fa-phone"></i> +254 700 000 000</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Green Agro Health Initiative (GAHI) - Youth-Led CBO in Kenya. All rights reserved.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Registration No: CBO/2025/XXXXX (Pending) | Tax Exemption: Applied</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Contact Form Submission
+        const contactForm = document.getElementById('contact-form-element');
+        const formMessage = document.getElementById('form-message');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const subject = document.getElementById('contact-subject').value;
+            const message = document.getElementById('contact-message').value;
+            
+            // Basic validation
+            if (!name || !email || !subject || !message) {
+                formMessage.textContent = 'Please fill in all required fields.';
+                formMessage.className = 'form-message error';
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                formMessage.textContent = 'Please enter a valid email address.';
+                formMessage.className = 'form-message error';
+                return;
+            }
+            
+            // If all validations pass
+            formMessage.textContent = `Thank you, ${name}! Your message has been sent. We'll respond to ${email} within 24-48 hours.`;
+            formMessage.className = 'form-message success';
+            
+            // In a real implementation, you would send the form data to a server here
+            // For now, we'll just log it and reset the form
+            console.log('Contact form submitted:', {
+                name,
+                email,
+                subject,
+                message
+            });
+            
+            // Reset form after 5 seconds
+            setTimeout(() => {
+                contactForm.reset();
+                formMessage.style.display = 'none';
+            }, 5000);
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Auto-resize textarea
+        const textarea = document.getElementById('contact-message');
+        if (textarea) {
+            textarea.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight) + 'px';
+            });
+        }
+        
+        // Display current time in Nairobi
+        function updateNairobiTime() {
+            const options = {
+                timeZone: 'Africa/Nairobi',
+                hour12: false,
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            
+            const nairobiTime = new Date().toLocaleTimeString('en-US', options);
+            const nairobiDate = new Date().toLocaleDateString('en-US', {
+                timeZone: 'Africa/Nairobi',
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            // You could display this somewhere on the page if desired
+            // console.log(`Nairobi time: ${nairobiTime} on ${nairobiDate}`);
+        }
+        
+        // Update time every minute
+        updateNairobiTime();
+        setInterval(updateNairobiTime, 60000);
+    </script>
+</body>
+</html>

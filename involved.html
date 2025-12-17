@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Involved - Support Green Agro Health Initiative (GAHI)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #228B22;
+            --dark-green: #1a6b1a;
+            --light-green: #4CAF50;
+            --earth-brown: #8B4513;
+            --beige: #F5F5DC;
+            --light-gray: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--dark-green);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-green);
+        }
+
+        h3 {
+            font-size: 1.6rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-green);
+            color: var(--primary-green);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-green);
+            color: white;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .logo span {
+            color: var(--earth-brown);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        nav ul li a.active {
+            color: var(--primary-green);
+        }
+
+        nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-green);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--primary-green);
+        }
+
+        /* ===== PAGE BANNER ===== */
+        .page-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .page-banner h1 {
+            color: white;
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .page-banner p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* ===== INVOLVEMENT OPTIONS ===== */
+        .involvement-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .center-heading {
+            text-align: center;
+        }
+
+        .center-heading h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .involvement-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .option-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-green);
+        }
+
+        .option-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .option-icon {
+            font-size: 3rem;
+            color: var(--primary-green);
+            margin-bottom: 25px;
+        }
+
+        .option-card h3 {
+            color: var(--dark-green);
+            margin-bottom: 20px;
+        }
+
+        .option-features {
+            list-style: none;
+            text-align: left;
+            margin: 25px 0;
+        }
+
+        .option-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+        }
+
+        .option-features li:last-child {
+            border-bottom: none;
+        }
+
+        .option-features li i {
+            color: var(--primary-green);
+            margin-right: 10px;
+        }
+
+        /* ===== DONATION SECTION ===== */
+        .donation-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .donation-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .donation-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .method-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: var(--transition);
+        }
+
+        .method-card:hover {
+            background-color: #f0f7f0;
+            border-color: var(--primary-green);
+        }
+
+        .method-icon {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .method-card h4 {
+            color: var(--dark-green);
+            margin-bottom: 15px;
+        }
+
+        .method-details {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .payment-details {
+            background-color: var(--beige);
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 15px;
+            text-align: left;
+            font-family: monospace;
+            font-size: 0.9rem;
+            border-left: 4px solid var(--earth-brown);
+        }
+
+        /* ===== VOLUNTEER FORM ===== */
+        .volunteer-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-green);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 2px rgba(34, 139, 34, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .checkbox-item input {
+            width: auto;
+            margin-right: 8px;
+        }
+
+        .form-message {
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+
+        .form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+
+        /* ===== PARTNERSHIP SECTION ===== */
+        .partnership-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .partnership-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .partnership-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 30px;
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .partnership-card h4 {
+            color: var(--dark-green);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .partnership-card h4 i {
+            margin-right: 10px;
+            color: var(--primary-green);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .page-banner h1 {
+                font-size: 2.8rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: transform 0.5s ease;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .page-banner {
+                padding: 150px 0 80px;
+                margin-top: 60px;
+            }
+            
+            .page-banner h1 {
+                font-size: 2.4rem;
+            }
+            
+            .page-banner p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .option-card {
+                padding: 30px;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .page-banner h1 {
+                font-size: 2rem;
+            }
+            
+            .involvement-options,
+            .donation-methods,
+            .partnership-types {
+                grid-template-columns: 1fr;
+            }
+            
+            .method-card,
+            .partnership-card {
+                padding: 25px 20px;
+            }
+            
+            .checkbox-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i> GA<span>HI</span>
+            </a>
+            
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="constitution.html">Constitution</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="involved.html" class="active">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE BANNER -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Get Involved with GAHI</h1>
+            <p>Join our youth-led movement to transform agricultural waste, combat antimicrobial resistance, and empower farming communities across Kenya. Your support can create lasting change.</p>
+            <a href="#volunteer" class="btn">Volunteer With Us</a>
+            <a href="#donate" class="btn btn-outline" style="border-color: white; color: white;">Donate Now</a>
+        </div>
+    </section>
+
+    <!-- INVOLVEMENT OPTIONS -->
+    <section class="involvement-section">
+        <div class="container">
+            <div class="center-heading">
+                <h2>Ways to Get Involved</h2>
+                <p>Choose how you'd like to support our mission for sustainable agriculture and community health in Kenya.</p>
+            </div>
+            
+            <div class="involvement-options">
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Volunteer</h3>
+                    <p>Share your skills, time, and expertise to support our programs and community initiatives. Whether you're a student, professional, or retiree, there's a role for you.</p>
+                    
+                    <ul class="option-features">
+                        <li><i class="fas fa-check"></i> Field work and community outreach</li>
+                        <li><i class="fas fa-check"></i> Research and data collection</li>
+                        <li><i class="fas fa-check"></i> Training and workshop facilitation</li>
+                        <li><i class="fas fa-check"></i> Administrative support</li>
+                    </ul>
+                    
+                    <a href="#volunteer" class="btn">Volunteer Now</a>
+                </div>
+                
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Donate</h3>
+                    <p>Your financial contribution directly supports our programs, from waste management initiatives to youth training and AMR awareness campaigns.</p>
+                    
+                    <ul class="option-features">
+                        <li><i class="fas fa-check"></i> One-time or monthly donations</li>
+                        <li><i class="fas fa-check"></i> Sponsor a specific project</li>
+                        <li><i class="fas fa-check"></i> In-kind donations (equipment, materials)</li>
+                        <li><i class="fas fa-check"></i> Corporate matching programs</li>
+                    </ul>
+                    
+                    <a href="#donate" class="btn">Donate Now</a>
+                </div>
+                
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Partner</h3>
+                    <p>Join forces with GAHI as a corporate partner, academic institution, NGO, or community group to amplify our impact and reach.</p>
+                    
+                    <ul class="option-features">
+                        <li><i class="fas fa-check"></i> Corporate social responsibility partnerships</li>
+                        <li><i class="fas fa-check"></i> Research and academic collaborations</li>
+                        <li><i class="fas fa-check"></i> NGO/CBO network partnerships</li>
+                        <li><i class="fas fa-check"></i> Government agency collaborations</li>
+                    </ul>
+                    
+                    <a href="#partnership" class="btn">Partner With Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DONATION SECTION -->
+    <section class="donation-section" id="donate">
+        <div class="container">
+            <div class="donation-container">
+                <div class="center-heading">
+                    <h2>Support Our Work Financially</h2>
+                    <p>Your donation helps us transform agricultural waste, train farmers, raise AMR awareness, and empower youth and women in Kenyan communities.</p>
+                </div>
+                
+                <div class="donation-methods">
+                    <div class="method-card">
+                        <div class="method-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>M-Pesa</h4>
+                        <div class="method-details">Fast and secure mobile money transfer</div>
+                        
+                        <div class="payment-details">
+                            <p><strong>Paybill Number:</strong> 123456</p>
+                            <p><strong>Account Number:</strong> GAHI</p>
+                            <p><strong>Business Name:</strong> Green Agro Health Initiative</p>
+                        </div>
+                        
+                        <p style="margin-top: 15px; font-size: 0.9rem; color: var(--text-light);">
+                            <i class="fas fa-info-circle"></i> Use your name as reference
+                        </p>
+                    </div>
+                    
+                    <div class="method-card">
+                        <div class="method-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h4>Bank Transfer</h4>
+                        <div class="method-details">Direct transfer to our bank account</div>
+                        
+                        <div class="payment-details">
+                            <p><strong>Bank Name:</strong> Kenya Commercial Bank (KCB)</p>
+                            <p><strong>Account Name:</strong> Green Agro Health Initiative</p>
+                            <p><strong>Account Number:</strong> 1234567890</p>
+                            <p><strong>Branch:</strong> Nairobi Central</p>
+                            <p><strong>SWIFT Code:</strong> KCBLKENX</p>
+                        </div>
+                    </div>
+                    
+                    <div class="method-card">
+                        <div class="method-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h4>Online Donation</h4>
+                        <div class="method-details">Secure online payment (Coming Soon)</div>
+                        
+                        <div class="payment-details">
+                            <p>We're working on integrating secure online payment options. For now, please use M-Pesa or bank transfer.</p>
+                            <p>Contact us for other donation methods or international transfers.</p>
+                        </div>
+                        
+                        <a href="contact.html" class="btn" style="margin-top: 15px;">Contact for Details</a>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px; padding: 20px; background-color: var(--beige); border-radius: 8px;">
+                    <h3 style="color: var(--earth-brown); margin-bottom: 15px;">What Your Donation Supports</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px;">
+                        <div>
+                            <h4 style="color: var(--primary-green); font-size: 1.1rem;">KES 1,000</h4>
+                            <p style="font-size: 0.9rem;">Trains one farmer on composting techniques</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-green); font-size: 1.1rem;">KES 5,000</h4>
+                            <p style="font-size: 0.9rem;">Supports one AMR awareness workshop</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-green); font-size: 1.1rem;">KES 10,000</h4>
+                            <p style="font-size: 0.9rem;">Provides briquette making tools for 5 youth</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-green); font-size: 1.1rem;">KES 50,000</h4>
+                            <p style="font-size: 0.9rem;">Establishes a community composting center</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VOLUNTEER FORM -->
+    <section class="volunteer-section" id="volunteer">
+        <div class="container">
+            <div class="center-heading">
+                <h2>Volunteer With Us</h2>
+                <p>Fill out the form below to express your interest in volunteering with GAHI. We'll contact you with opportunities matching your skills and interests.</p>
+            </div>
+            
+            <div class="form-container">
+                <div class="form-message" id="form-message"></div>
+                
+                <form id="volunteer-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First Name *</label>
+                            <input type="text" id="first-name" name="first-name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="last-name">Last Name *</label>
+                            <input type="text" id="last-name" name="last-name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Location (County/District) *</label>
+                        <input type="text" id="location" name="location" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="occupation">Occupation/Profession</label>
+                        <input type="text" id="occupation" name="occupation">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Areas of Interest (Select all that apply) *</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="interest-field" name="interest[]" value="field-work">
+                                <label for="interest-field">Field Work & Community Outreach</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="interest-research" name="interest[]" value="research">
+                                <label for="interest-research">Research & Data Collection</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="interest-training" name="interest[]" value="training">
+                                <label for="interest-training">Training & Workshop Facilitation</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="interest-admin" name="interest[]" value="admin">
+                                <label for="interest-admin">Administrative Support</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="interest-fundraising" name="interest[]" value="fundraising">
+                                <label for="interest-fundraising">Fundraising & Grant Writing</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="interest-communications" name="interest[]" value="communications">
+                                <label for="interest-communications">Communications & Social Media</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="skills">Skills & Experience *</label>
+                        <textarea id="skills" name="skills" rows="4" placeholder="Please describe your skills, qualifications, and any relevant experience..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="availability">Availability *</label>
+                        <select id="availability" name="availability" required>
+                            <option value="">Select your availability</option>
+                            <option value="full-time">Full-time (40+ hours/week)</option>
+                            <option value="part-time">Part-time (20-40 hours/week)</option>
+                            <option value="weekends">Weekends only</option>
+                            <option value="flexible">Flexible schedule</option>
+                            <option value="project-based">Project-based/Short-term</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Any additional information you'd like to share..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%;">Submit Volunteer Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNERSHIP SECTION -->
+    <section class="partnership-section" id="partnership">
+        <div class="container">
+            <div class="center-heading">
+                <h2>Partnership Opportunities</h2>
+                <p>We welcome collaborations with organizations, institutions, and businesses that share our commitment to sustainable agriculture and community health.</p>
+            </div>
+            
+            <div class="partnership-types">
+                <div class="partnership-card">
+                    <h4><i class="fas fa-building"></i> Corporate Partnerships</h4>
+                    <p>Partner with GAHI through corporate social responsibility (CSR) initiatives, employee volunteering programs, or cause-related marketing campaigns. Benefits include positive brand association, employee engagement, and measurable social impact.</p>
+                </div>
+                
+                <div class="partnership-card">
+                    <h4><i class="fas fa-graduation-cap"></i> Academic & Research Collaborations</h4>
+                    <p>Collaborate on research projects, student internships, field studies, or joint publications. We work with universities and research institutions on topics ranging from waste management to antimicrobial resistance and climate-smart agriculture.</p>
+                </div>
+                
+                <div class="partnership-card">
+                    <h4><i class="fas fa-network-wired"></i> NGO & CBO Networks</h4>
+                    <p>Join our network of community-based organizations and non-profits working on sustainable development. Share resources, coordinate interventions, and amplify our collective impact through joint advocacy and programming.</p>
+                </div>
+                
+                <div class="partnership-card">
+                    <h4><i class="fas fa-landmark"></i> Government & Agency Collaborations</h4>
+                    <p>Work with county and national government agencies on policy advocacy, program implementation, and community development initiatives aligned with national priorities like the Big Four Agenda and Vision 2030.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <p>For partnership inquiries, please contact our Head of Communications, Advocacy & Partnerships:</p>
+                <a href="contact.html" class="btn" style="margin-top: 20px;">Contact for Partnership</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-leaf"></i> Green Agro Health Initiative
+                    </a>
+                    <p>A youth-led Community Based Organisation in Kenya committed to transforming agricultural waste into sustainable solutions.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="constitution.html">Constitution</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="involved.html">Get Involved</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi County, Kenya</p>
+                    <p><i class="fas fa-envelope"></i> info@gahi.org</p>
+                    <p><i class="fas fa-phone"></i> +254 700 000 000</p>
+                    <p><i class="fas fa-envelope"></i> volunteer@gahi.org (Volunteering)</p>
+                    <p><i class="fas fa-envelope"></i> donations@gahi.org (Donations)</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Green Agro Health Initiative (GAHI) - Youth-Led CBO in Kenya. All rights reserved.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Registration No: CBO/2025/XXXXX (Pending)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Volunteer Form Submission
+        const volunteerForm = document.getElementById('volunteer-form');
+        const formMessage = document.getElementById('form-message');
+        
+        volunteerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic form validation
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const location = document.getElementById('location').value;
+            const skills = document.getElementById('skills').value;
+            const availability = document.getElementById('availability').value;
+            
+            // Check if at least one interest is selected
+            const interests = document.querySelectorAll('input[name="interest[]"]:checked');
+            if (interests.length === 0) {
+                formMessage.textContent = 'Please select at least one area of interest.';
+                formMessage.className = 'form-message error';
+                return;
+            }
+            
+            // If all validations pass
+            formMessage.textContent = `Thank you, ${firstName}! Your volunteer application has been submitted. We'll contact you at ${email} within 5-7 business days.`;
+            formMessage.className = 'form-message success';
+            
+            // In a real implementation, you would send the form data to a server here
+            // For now, we'll just log it and reset the form
+            console.log('Volunteer form submitted:', {
+                firstName,
+                lastName,
+                email,
+                phone,
+                location,
+                skills,
+                availability,
+                interests: Array.from(interests).map(i => i.value)
+            });
+            
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                volunteerForm.reset();
+                formMessage.style.display = 'none';
+            }, 5000);
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Copy M-Pesa details to clipboard (simulated)
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('copy-btn')) {
+                const details = e.target.previousElementSibling.textContent;
+                
+                // In a real implementation, you would use the Clipboard API
+                // navigator.clipboard.writeText(details);
+                
+                // For this demo, we'll just show an alert
+                alert('Payment details copied to clipboard (simulated).\n\nIn a real implementation, this would copy: ' + details);
+                
+                // Visual feedback
+                const originalText = e.target.textContent;
+                e.target.textContent = 'Copied!';
+                e.target.style.backgroundColor = '#4CAF50';
+                
+                setTimeout(() => {
+                    e.target.textContent = originalText;
+                    e.target.style.backgroundColor = '';
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>

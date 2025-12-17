@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & News - Green Agro Health Initiative (GAHI)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #228B22;
+            --dark-green: #1a6b1a;
+            --light-green: #4CAF50;
+            --earth-brown: #8B4513;
+            --beige: #F5F5DC;
+            --light-gray: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--dark-green);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-green);
+        }
+
+        h3 {
+            font-size: 1.6rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-green);
+            color: var(--primary-green);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-green);
+            color: white;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .logo span {
+            color: var(--earth-brown);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        nav ul li a.active {
+            color: var(--primary-green);
+        }
+
+        nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-green);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--primary-green);
+        }
+
+        /* ===== PAGE BANNER ===== */
+        .page-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1586773860418-dc22f8b874bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .page-banner h1 {
+            color: white;
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .page-banner p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* ===== BLOG CONTENT ===== */
+        .blog-content {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .center-heading {
+            text-align: center;
+        }
+
+        .center-heading h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* ===== BLOG FILTER ===== */
+        .blog-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover {
+            background-color: #f0f7f0;
+            border-color: var(--primary-green);
+        }
+
+        .filter-btn.active {
+            background-color: var(--primary-green);
+            color: white;
+            border-color: var(--primary-green);
+        }
+
+        /* ===== BLOG GRID ===== */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .blog-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-img {
+            height: 220px;
+            background-color: #e0e0e0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .blog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover .blog-img img {
+            transform: scale(1.05);
+        }
+
+        .blog-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--primary-green);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .blog-info {
+            padding: 25px;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .blog-date {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .blog-date i, .blog-author i {
+            margin-right: 5px;
+            color: var(--primary-green);
+        }
+
+        .blog-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark-green);
+            line-height: 1.4;
+        }
+
+        .blog-title a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .blog-title a:hover {
+            color: var(--primary-green);
+        }
+
+        .blog-excerpt {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            color: var(--dark-green);
+        }
+
+        .read-more i {
+            margin-left: 5px;
+            transition: var(--transition);
+        }
+
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+
+        /* ===== BLOG PAGINATION ===== */
+        .blog-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .pagination-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            margin: 0 5px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .pagination-btn:hover {
+            background-color: #f0f7f0;
+            border-color: var(--primary-green);
+        }
+
+        .pagination-btn.active {
+            background-color: var(--primary-green);
+            color: white;
+            border-color: var(--primary-green);
+        }
+
+        .pagination-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination-btn.disabled:hover {
+            background-color: white;
+            border-color: #ddd;
+        }
+
+        /* ===== NEWSLETTER SECTION ===== */
+        .newsletter {
+            background-color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .newsletter-form {
+            max-width: 600px;
+            margin: 40px auto 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        /* ===== SIDEBAR LAYOUT ===== */
+        .blog-container {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== BLOG SIDEBAR ===== */
+        .blog-sidebar {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .sidebar-widget {
+            margin-bottom: 40px;
+        }
+
+        .sidebar-widget:last-child {
+            margin-bottom: 0;
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-gray);
+            color: var(--dark-green);
+        }
+
+        /* ===== CATEGORIES WIDGET ===== */
+        .categories-list {
+            list-style: none;
+        }
+
+        .categories-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .categories-list li:last-child {
+            border-bottom: none;
+        }
+
+        .categories-list a {
+            text-decoration: none;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .categories-list a:hover {
+            color: var(--primary-green);
+        }
+
+        .category-count {
+            background-color: var(--light-gray);
+            color: var(--text-light);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* ===== RECENT POSTS WIDGET ===== */
+        .recent-posts {
+            list-style: none;
+        }
+
+        .recent-post {
+            display: flex;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .recent-post:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .recent-post-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .recent-post-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .recent-post:hover .recent-post-img img {
+            transform: scale(1.05);
+        }
+
+        .recent-post-content h4 {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .recent-post-content h4 a {
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .recent-post-content h4 a:hover {
+            color: var(--primary-green);
+        }
+
+        .recent-post-date {
+            color: var(--text-light);
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .recent-post-date i {
+            margin-right: 5px;
+            color: var(--primary-green);
+            font-size: 0.7rem;
+        }
+
+        /* ===== TAGS WIDGET ===== */
+        .tags-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            padding: 6px 15px;
+            background-color: var(--light-gray);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            background-color: var(--primary-green);
+            color: white;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .page-banner h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: transform 0.5s ease;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .page-banner {
+                padding: 150px 0 80px;
+                margin-top: 60px;
+            }
+            
+            .page-banner h1 {
+                font-size: 2.4rem;
+            }
+            
+            .page-banner p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .blog-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 30px;
+            }
+            
+            .blog-container {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .page-banner h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-info {
+                padding: 20px;
+            }
+            
+            .blog-sidebar {
+                padding: 25px 20px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i> GA<span>HI</span>
+            </a>
+            
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="constitution.html">Constitution</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="involved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE BANNER -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>GAHI Blog & News</h1>
+            <p>Stay updated with our latest projects, success stories, research findings, and awareness campaigns on sustainable agriculture, AMR, waste-to-energy solutions, and youth empowerment in Kenya.</p>
+            <a href="#blog-posts" class="btn">Read Our Blog</a>
+            <a href="#newsletter" class="btn btn-outline" style="border-color: white; color: white;">Subscribe</a>
+        </div>
+    </section>
+
+    <!-- BLOG CONTENT -->
+    <section class="blog-content" id="blog-posts">
+        <div class="container">
+            <div class="center-heading">
+                <h2>Latest Updates & Stories</h2>
+                <p>Insights, success stories, and educational content from our field activities and research initiatives.</p>
+            </div>
+            
+            <!-- Blog Filter -->
+            <div class="blog-filter">
+                <button class="filter-btn active" data-category="all">All Posts</button>
+                <button class="filter-btn" data-category="projects">Project Updates</button>
+                <button class="filter-btn" data-category="amr">AMR Awareness</button>
+                <button class="filter-btn" data-category="agriculture">Sustainable Agriculture</button>
+                <button class="filter-btn" data-category="energy">Waste-to-Energy</button>
+                <button class="filter-btn" data-category="youth">Youth Empowerment</button>
+            </div>
+            
+            <!-- Blog Container with Sidebar -->
+            <div class="blog-container">
+                <!-- Main Blog Posts -->
+                <div class="blog-main">
+                    <div class="blog-grid">
+                        <!-- Blog Post 1 -->
+                        <article class="blog-card" data-category="projects agriculture">
+                            <div class="blog-img">
+                                <div class="blog-category">Project Updates</div>
+                                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Poultry Waste Management Project">
+                            </div>
+                            <div class="blog-info">
+                                <div class="blog-meta">
+                                    <span class="blog-date"><i class="far fa-calendar"></i> December 15, 2025</span>
+                                    <span class="blog-author"><i class="far fa-user"></i> Osman Adan Abdi</span>
+                                </div>
+                                <h3 class="blog-title"><a href="blog-posts/post1.html">Launching Our Pilot Poultry Waste Management Project in Kiambu County</a></h3>
+                                <p class="blog-excerpt">We're excited to announce the launch of our pilot project for sustainable poultry waste management in Kiambu County. This initiative aims to transform chicken manure into valuable compost for smallholder farmers...</p>
+                                <a href="blog-posts/post1.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                        
+                        <!-- Blog Post 2 -->
+                        <article class="blog-card" data-category="amr health">
+                            <div class="blog-img">
+                                <div class="blog-category">AMR Awareness</div>
+                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AMR Awareness Workshop">
+                            </div>
+                            <div class="blog-info">
+                                <div class="blog-meta">
+                                    <span class="blog-date"><i class="far fa-calendar"></i> December 10, 2025</span>
+                                    <span class="blog-author"><i class="far fa-user"></i> Hanan Adan Alio</span>
+                                </div>
+                                <h3 class="blog-title"><a href="blog-posts/post2.html">Understanding Antimicrobial Resistance: A Community Workshop Success</a></h3>
+                                <p class="blog-excerpt">Last week, GAHI conducted its first community workshop on antimicrobial resistance (AMR) in Nairobi's Eastlands area. Over 50 farmers and community health volunteers attended to learn about responsible antibiotic use...</p>
+                                <a href="blog-posts/post2.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                        
+                        <!-- Blog Post 3 -->
+                        <article class="blog-card" data-category="energy projects">
+                            <div class="blog-img">
+                                <div class="blog-category">Waste-to-Energy</div>
+                                <img src="https://images.unsplash.com/photo-1589923186741-b7d59d6b2c4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Briquette Production">
+                            </div>
+                            <div class="blog-info">
+                                <div class="blog-meta">
+                                    <span class="blog-date"><i class="far fa-calendar"></i> December 5, 2025</span>
+                                    <span class="blog-author"><i class="far fa-user"></i> Mohamed Abass Maalim</span>
+                                </div>
+                                <h3 class="blog-title"><a href="blog-posts/post3.html">From Waste to Fuel: Our First Briquette Production Trial</a></h3>
+                                <p class="blog-excerpt">This month, we successfully completed our first trial of briquette production using poultry manure mixed with rice husks. The results are promising for creating an affordable, clean alternative fuel source for rural communities...</p>
+                                <a href="blog-posts/post3.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                        
+                        <!-- Blog Post 4 -->
+                        <article class="blog-card" data-category="youth agriculture">
+                            <div class="blog-img">
+                                <div class="blog-category">Youth Empowerment</div>
+                                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Youth in Agriculture">
+                            </div>
+                            <div class="blog-info">
+                                <div class="blog-meta">
+                                    <span class="blog-date"><i class="far fa-calendar"></i> November 28, 2025</span>
+                                    <span class="blog-author"><i class="far fa-user"></i> Hanan Adan Alio</span>
+                                </div>
+                                <h3 class="blog-title"><a href="#">Empowering Young Farmers: Our First Youth Agri-Entrepreneurship Training</a></h3>
+                                <p class="blog-excerpt">GAHI conducted a three-day training workshop for 25 young aspiring farmers from Kajiado County. The training focused on climate-smart agriculture techniques, business planning, and market access for sustainable farming enterprises...</p>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                        
+                        <!-- Blog Post 5 -->
+                        <article class="blog-card" data-category="agriculture">
+                            <div class="blog-img">
+                                <div class="blog-category">Sustainable Agriculture</div>
+                                <img src="https://images.unsplash.com/photo-1592982537447-7444dc31f8e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Conservation Agriculture">
+                            </div>
+                            <div class="blog-info">
+                                <div class="blog-meta">
+                                    <span class="blog-date"><i class="far fa-calendar"></i> November 20, 2025</span>
+                                    <span class="blog-author"><i class="far fa-user"></i> Osman Adan Abdi</span>
+                                </div>
+                                <h3 class="blog-title"><a href="#">Introduction to Conservation Agriculture: Techniques for Dryland Farming</a></h3>
+                                <p class="blog-excerpt">With changing weather patterns affecting Kenyan farmers, conservation agriculture offers sustainable solutions. This post explores minimum tillage, crop rotation, and soil cover techniques that can improve yields while conserving resources...</p>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                        
+                        <!-- Blog Post 6 -->
+                        <article class="blog-card" data-category="projects">
+                            <div class="blog-img">
+                                <div class="blog-category">Project Updates</div>
+                                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Community Engagement">
+                            </div>
+                            <div class="blog-info">
+                                <div class="blog-meta">
+                                    <span class="blog-date"><i class="far fa-calendar"></i> November 15, 2025</span>
+                                    <span class="blog-author"><i class="far fa-user"></i> Mohamed Ali Adan</span>
+                                </div>
+                                <h3 class="blog-title"><a href="#">Community Feedback Sessions: Shaping GAHI's Future Programs</a></h3>
+                                <p class="blog-excerpt">Over the past month, GAHI team members conducted community feedback sessions in three counties to understand local needs and priorities. The insights gathered will shape our 2026 program strategy and ensure community ownership...</p>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="blog-pagination">
+                        <a href="#" class="pagination-btn disabled"><i class="fas fa-chevron-left"></i></a>
+                        <a href="#" class="pagination-btn active">1</a>
+                        <a href="#" class="pagination-btn">2</a>
+                        <a href="#" class="pagination-btn">3</a>
+                        <a href="#" class="pagination-btn"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Blog Sidebar -->
+                <aside class="blog-sidebar">
+                    <!-- Search Widget -->
+                    <div class="sidebar-widget">
+                        <h3>Search Blog</h3>
+                        <div style="position: relative;">
+                            <input type="text" placeholder="Search articles..." style="width: 100%; padding: 12px 40px 12px 15px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;">
+                            <button style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--primary-green); cursor: pointer;">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Categories Widget -->
+                    <div class="sidebar-widget">
+                        <h3>Categories</h3>
+                        <ul class="categories-list">
+                            <li>
+                                <a href="#" data-category="projects">
+                                    Project Updates
+                                    <span class="category-count">6</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-category="amr">
+                                    AMR Awareness
+                                    <span class="category-count">4</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-category="agriculture">
+                                    Sustainable Agriculture
+                                    <span class="category-count">8</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-category="energy">
+                                    Waste-to-Energy
+                                    <span class="category-count">3</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-category="youth">
+                                    Youth Empowerment
+                                    <span class="category-count">5</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-category="health">
+                                    Community Health
+                                    <span class="category-count">3</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Recent Posts Widget -->
+                    <div class="sidebar-widget">
+                        <h3>Recent Posts</h3>
+                        <ul class="recent-posts">
+                            <li class="recent-post">
+                                <div class="recent-post-img">
+                                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Recent Post">
+                                </div>
+                                <div class="recent-post-content">
+                                    <h4><a href="blog-posts/post1.html">Launching Our Pilot Poultry Waste Management Project</a></h4>
+                                    <div class="recent-post-date"><i class="far fa-calendar"></i> Dec 15, 2025</div>
+                                </div>
+                            </li>
+                            <li class="recent-post">
+                                <div class="recent-post-img">
+                                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Recent Post">
+                                </div>
+                                <div class="recent-post-content">
+                                    <h4><a href="blog-posts/post2.html">Understanding Antimicrobial Resistance</a></h4>
+                                    <div class="recent-post-date"><i class="far fa-calendar"></i> Dec 10, 2025</div>
+                                </div>
+                            </li>
+                            <li class="recent-post">
+                                <div class="recent-post-img">
+                                    <img src="https://images.unsplash.com/photo-1589923186741-b7d59d6b2c4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Recent Post">
+                                </div>
+                                <div class="recent-post-content">
+                                    <h4><a href="blog-posts/post3.html">From Waste to Fuel: Briquette Production Trial</a></h4>
+                                    <div class="recent-post-date"><i class="far fa-calendar"></i> Dec 5, 2025</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Tags Widget -->
+                    <div class="sidebar-widget">
+                        <h3>Popular Tags</h3>
+                        <div class="tags-list">
+                            <a href="#" class="tag">Poultry Waste</a>
+                            <a href="#" class="tag">Composting</a>
+                            <a href="#" class="tag">Climate-Smart</a>
+                            <a href="#" class="tag">AMR</a>
+                            <a href="#" class="tag">Briquettes</a>
+                            <a href="#" class="tag">Youth</a>
+                            <a href="#" class="tag">Women Empowerment</a>
+                            <a href="#" class="tag">Training</a>
+                            <a href="#" class="tag">Sustainable Farming</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter" id="newsletter">
+        <div class="container">
+            <div class="center-heading">
+                <h2>Never Miss an Update</h2>
+                <p>Subscribe to our newsletter to receive the latest blog posts, project updates, and opportunities directly in your inbox.</p>
+            </div>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="btn">Subscribe Now</button>
+            </form>
+            <p id="newsletter-message" style="margin-top: 15px; display: none;"></p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-leaf"></i> Green Agro Health Initiative
+                    </a>
+                    <p>A youth-led Community Based Organisation in Kenya committed to transforming agricultural waste into sustainable solutions.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="constitution.html">Constitution</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="involved.html">Get Involved</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi County, Kenya</p>
+                    <p><i class="fas fa-envelope"></i> info@gahi.org</p>
+                    <p><i class="fas fa-phone"></i> +254 700 000 000</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Green Agro Health Initiative (GAHI) - Youth-Led CBO in Kenya. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Blog Filter Functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filter = button.getAttribute('data-category');
+                
+                // Show/hide blog cards based on filter
+                blogCards.forEach(card => {
+                    const categories = card.getAttribute('data-category');
+                    
+                    if (filter === 'all' || categories.includes(filter)) {
+                        card.style.display = 'block';
+                        // Add slight animation
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transition = 'opacity 0.3s ease';
+                        }, 10);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Category filter from sidebar
+        const categoryLinks = document.querySelectorAll('.categories-list a');
+        
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const category = link.getAttribute('data-category');
+                
+                // Update filter button state
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.getAttribute('data-category') === category) {
+                        btn.classList.add('active');
+                    }
+                });
+                
+                // Trigger filter
+                const event = new Event('click');
+                document.querySelector(`.filter-btn[data-category="${category}"]`).dispatchEvent(event);
+                
+                // Scroll to blog grid
+                document.querySelector('.blog-grid').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+        
+        // Newsletter Form Submission
+        const newsletterForm = document.getElementById('newsletter-form');
+        const newsletterMessage = document.getElementById('newsletter-message');
+        
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                
+                // Simulate form submission
+                newsletterMessage.textContent = `Thank you! You've subscribed with ${email}. You'll receive our next update.`;
+                newsletterMessage.style.color = 'var(--primary-green)';
+                newsletterMessage.style.display = 'block';
+                
+                // Reset form
+                this.reset();
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    newsletterMessage.style.display = 'none';
+                }, 5000);
+            });
+        }
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Search functionality (basic simulation)
+        const searchInput = document.querySelector('input[type="text"]');
+        const searchButton = document.querySelector('button[type="button"]');
+        
+        if (searchButton) {
+            searchButton.addEventListener('click', () => {
+                const query = searchInput.value.toLowerCase();
+                if (query.trim() === '') return;
+                
+                // Filter blog cards based on search query
+                let foundResults = false;
+                blogCards.forEach(card => {
+                    const title = card.querySelector('.blog-title').textContent.toLowerCase();
+                    const excerpt = card.querySelector('.blog-excerpt').textContent.toLowerCase();
+                    
+                    if (title.includes(query) || excerpt.includes(query)) {
+                        card.style.display = 'block';
+                        foundResults = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Show message if no results
+                if (!foundResults) {
+                    alert(`No blog posts found for "${query}". Try different keywords.`);
+                    // Reset filter
+                    filterButtons.forEach(btn => {
+                        if (btn.classList.contains('active')) {
+                            btn.dispatchEvent(new Event('click'));
+                        }
+                    });
+                }
+                
+                searchInput.value = '';
+            });
+        }
+        
+        // Enter key for search
+        if (searchInput) {
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    searchButton.click();
+                }
+            });
+        }
+    </script>
+</body>
+</html>

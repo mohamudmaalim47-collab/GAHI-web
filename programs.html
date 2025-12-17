@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs & Objectives - Green Agro Health Initiative (GAHI)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #228B22;
+            --dark-green: #1a6b1a;
+            --light-green: #4CAF50;
+            --earth-brown: #8B4513;
+            --beige: #F5F5DC;
+            --light-gray: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--dark-green);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-green);
+        }
+
+        h3 {
+            font-size: 1.6rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-green);
+            color: var(--primary-green);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-green);
+            color: white;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .logo span {
+            color: var(--earth-brown);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        nav ul li a.active {
+            color: var(--primary-green);
+        }
+
+        nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-green);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--primary-green);
+        }
+
+        /* ===== PAGE BANNER ===== */
+        .page-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .page-banner h1 {
+            color: white;
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .page-banner p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* ===== CATEGORIES SECTION ===== */
+        .categories {
+            background-color: var(--light-gray);
+            padding: 60px 0;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .category-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            border-top: 4px solid var(--primary-green);
+        }
+
+        .category-card.active {
+            background-color: var(--primary-green);
+        }
+
+        .category-card.active .category-icon,
+        .category-card.active h3,
+        .category-card.active p {
+            color: white;
+        }
+
+        .category-card:hover:not(.active) {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .category-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .category-card p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* ===== OBJECTIVES ACCORDION ===== */
+        .objectives-container {
+            padding: 60px 0;
+        }
+
+        .center-heading {
+            text-align: center;
+        }
+
+        .center-heading h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .accordion {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid #e0e0e0;
+        }
+
+        .accordion-header {
+            background-color: var(--white);
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .accordion-header:hover {
+            background-color: #f9f9f9;
+        }
+
+        .accordion-header.active {
+            background-color: var(--primary-green);
+        }
+
+        .accordion-header.active .accordion-title,
+        .accordion-header.active .accordion-icon {
+            color: white;
+        }
+
+        .accordion-title {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+
+        .accordion-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            margin-right: 15px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .accordion-header.active .accordion-number {
+            background-color: white;
+            color: var(--primary-green);
+        }
+
+        .accordion-icon {
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background-color: #f9f9f9;
+        }
+
+        .accordion-content.active {
+            padding: 25px;
+            max-height: 1000px;
+        }
+
+        .accordion-content p {
+            margin-bottom: 15px;
+        }
+
+        .accordion-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .objective-icon {
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            margin-right: 10px;
+        }
+
+        .future-projects {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: var(--beige);
+            border-radius: 4px;
+            border-left: 4px solid var(--earth-brown);
+        }
+
+        .future-projects h4 {
+            color: var(--earth-brown);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .future-projects ul {
+            padding-left: 20px;
+            color: var(--text-light);
+        }
+
+        .future-projects li {
+            margin-bottom: 8px;
+        }
+
+        /* ===== CATEGORY SECTIONS ===== */
+        .category-section {
+            display: none;
+            padding: 60px 0;
+        }
+
+        .category-section.active {
+            display: block;
+        }
+
+        .category-section h2 {
+            text-align: center;
+        }
+
+        .category-section h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background: linear-gradient(rgba(34, 139, 34, 0.9), rgba(26, 107, 26, 0.9)), 
+                        url('https://images.unsplash.com/photo-1589923186741-b7d59d6b2c4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+        }
+
+        .cta-section h2::after {
+            background-color: white;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .page-banner h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: transform 0.5s ease;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .page-banner {
+                padding: 150px 0 80px;
+                margin-top: 60px;
+            }
+            
+            .page-banner h1 {
+                font-size: 2.4rem;
+            }
+            
+            .page-banner p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .accordion-header {
+                padding: 15px 20px;
+            }
+            
+            .accordion-title {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .page-banner h1 {
+                font-size: 2rem;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-card {
+                padding: 25px 20px;
+            }
+            
+            .accordion-header {
+                padding: 15px;
+            }
+            
+            .accordion-number {
+                width: 25px;
+                height: 25px;
+                font-size: 0.8rem;
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i> GA<span>HI</span>
+            </a>
+            
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html" class="active">Programs</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="constitution.html">Constitution</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="involved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE BANNER -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Our Programs & Objectives</h1>
+            <p>Discover our 14 core objectives designed to transform agricultural waste, combat antimicrobial resistance, foster climate-resilient farming, and empower youth and women in Kenya.</p>
+            <a href="#objectives" class="btn">Explore Our Objectives</a>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="center-heading">Our Focus Areas</h2>
+            <div class="categories-grid">
+                <div class="category-card active" data-category="all">
+                    <div class="category-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>All Objectives</h3>
+                    <p>View all 14 core objectives</p>
+                </div>
+                
+                <div class="category-card" data-category="waste">
+                    <div class="category-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Waste Management</h3>
+                    <p>Transforming waste into resources</p>
+                </div>
+                
+                <div class="category-card" data-category="agriculture">
+                    <div class="category-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Climate-Smart Ag</h3>
+                    <p>Sustainable farming practices</p>
+                </div>
+                
+                <div class="category-card" data-category="health">
+                    <div class="category-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>One Health & AMR</h3>
+                    <p>Public health awareness</p>
+                </div>
+                
+                <div class="category-card" data-category="energy">
+                    <div class="category-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Waste-to-Energy</h3>
+                    <p>Clean energy from waste</p>
+                </div>
+                
+                <div class="category-card" data-category="empowerment">
+                    <div class="category-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Empowerment</h3>
+                    <p>Youth, women & farmers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OBJECTIVES ACCORDION -->
+    <section class="objectives-container" id="objectives">
+        <div class="container">
+            <div class="center-heading">
+                <h2>Our 14 Core Objectives</h2>
+                <p>Click on each objective to learn more about our specific goals and future projects</p>
+            </div>
+            
+            <div class="accordion" id="accordion">
+                <!-- Objective 1 -->
+                <div class="accordion-item" data-categories="waste agriculture">
+                    <div class="accordion-header" id="objective1">
+                        <div class="accordion-title">
+                            <span class="accordion-number">1</span>
+                            <i class="fas fa-recycle objective-icon"></i>
+                            Poultry Waste Management
+                        </div>
+                        <span class="accordion-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="accordion-content" id="content1">
+                        <p>Promote safe and sustainable collection, treatment, and utilization of poultry and organic waste (e.g. raw chicken manure) by supporting farmers with free manure distribution, encouraging proper composting and developing future waste to value innovations that enhance soil fertility, reduce pollution and support regenerative agriculture.</p>
+                        
+                        <div class="future-projects">
+                            <h4>Future Project Examples:</h4>
+                            <ul>
+                                <li>Establish community composting centers in 5 counties</li>
+                                <li>Develop mobile app for waste collection scheduling</li>
+                                <li>Create training manuals for proper manure management</li>
+                                <li>Pilot waste-to-fertilizer conversion units</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Objective 2 -->
+                <div class="accordion-item" data-categories="agriculture">
+                    <div class="accordion-header" id="objective2">
+                        <div class="accordion-title">
+                            <span class="accordion-number">2</span>
+                            <i class="fas fa-seedling objective-icon"></i>
+                            Climate-Smart Agriculture
+                        </div>
+                        <span class="accordion-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="accordion-content" id="content2">
+                        <p>Support and train farmers in climate smart and regenerative farming practices, such as conservation agriculture, agroforestry, and efficient irrigation, to enhance food security, environmental conservation, boost productivity and strengthen climate adaptation.</p>
+                        
+                        <div class="future-projects">
+                            <h4>Future Project Examples:</h4>
+                            <ul>
+                                <li>Establish demonstration farms for climate-smart techniques</li>
+                                <li>Develop training programs on water conservation methods</li>
+                                <li>Create agroforestry nurseries with drought-resistant species</li>
+                                <li>Organize farmer field schools on conservation agriculture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Objective 3 -->
+                <div class="accordion-item" data-categories="health">
+                    <div class="accordion-header" id="objective3">
+                        <div class="accordion-title">
+                            <span class="accordion-number">3</span>
+                            <i class="fas fa-heartbeat objective-icon"></i>
+                            Holistic One Health Approach & AMR Awareness
+                        </div>
+                        <span class="accordion-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="accordion-content" id="content3">
+                        <p>Advance community health education by raising awareness on antimicrobial resistance (AMR), animal source food safety, promoting responsible use of antibiotics in animals and humans to protect public health.</p>
+                        
+                        <div class="future-projects">
+                            <h4>Future Project Examples:</h4>
+                            <ul>
+                                <li>Develop AMR awareness campaign materials in local languages</li>
+                                <li>Organize community workshops on responsible antibiotic use</li>
+                                <li>Create educational videos on food safety practices</li>
+                                <li>Establish partnerships with local health centers for joint awareness programs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Objective 4 -->
+                <div class="accordion-item" data-categories="energy waste">
+                    <div class="accordion-header" id="objective4">
+                        <div class="accordion-title">
+                            <span class="accordion-number">4</span>
+                            <i class="fas fa-fire objective-icon"></i>
+                            Waste-to-Energy & Briquette Production
+                        </div>
+                        <span class="accordion-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="accordion-content" id="content4">
+                        <p>Develop sustainable waste to energy initiatives, including the production of clean briquettes from poultry manure mixed with rice husks and other residues, to reduce environmental pollution, promote circular economy solutions and provide affordable alternative fuel sources for communities.</p>
+                        
+                        <div class="future-projects">
+                            <h4>Future Project Examples:</h4>
+                            <ul>
+                                <li>Establish small-scale briquette production units</li>
+                                <li>Develop training programs on briquette making</li>
+                                <li>Create partnerships with institutions for fuel supply</li>
+                                <li>Research optimal briquette mixtures for maximum efficiency</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Objective 5 -->
+                <div class="accordion-item" data-categories="empowerment">
+                    <div class="accordion-header" id="objective5">
+                        <div class="accordion-title">
+                            <span class="accordion-number">5</span>
+                            <i class="fas fa-female objective-icon"></i>
+                            Youth and Women & Community Empowerment
+                        </div>
+                        <span class="accordion-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="accordion-content" id="content5">
+                        <p>Empower youth, women, and smallholder farmers through education, vocational training, leadership development, and income-generating activities, enabling them to lead climate action and address challenges like poverty and illiteracy.</p>
+                        
+                        <div class="future-projects">
+                            <h4>Future Project Examples:</h4>
+                            <ul>
+                                <li>Establish youth entrepreneurship programs in green economy</li>
+                                <li>Create women-led cooperatives for waste management enterprises</li>
+                                <li>Develop vocational training in sustainable agriculture techniques</li>
+                                <li>Organize leadership workshops for young community leaders</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Objective 6 -->
+                <div class="accordion-item" data-categories="agriculture">
+                    <div class="accordion-header" id="objective6">
+                        <div class="accordion-title">
+                            <span class="accordion-number">6</span>
+                            <i class="fas fa-tree objective-icon"></i>
+                            Environmental Protection
+                        </div>
+                        <span class="accordion-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="accordion-content" id="content6">
+                        <p>Promote activities that protect the environment, enhance biodiversity and reduce pollution through responsible waste management, soil conservation and restoration initiatives.</p>
+                        
+                        <div class="future-projects">
+                            <h4>Future Project Examples:</h4>
+                            <ul>
+                                <li>Establish tree planting campaigns in degraded areas</li>
+                                <li>Develop community-based soil conservation programs</li>
+                                <li>Create awareness campaigns on plastic pollution reduction</li>
+                                <li>Organize clean-up drives in farming communities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Objective 7 -->
+                <div class="accordion-item" data-categories="empowerment">
+                    <div class="accordion-header" id="objective7">
+                        <div class="accordion-title">
+                            <span class="accordion-number">7</span>
+                            <i class="fas fa-handshake objective-icon"></i>
+                            Partnership & Collaboration
+                        </div>
+                        <span class="accordion-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="accordion-content" id="content7">
+                        <p>Build strong partnerships with government agencies, NGOs, research institutions, academic institutions, and international organizations to share knowledge, leverage resources, and scale sustainable agricultural, climate and health solutions.</p>
+                        
+                        <div class="future-projects">
+                            <h4>Future Project Examples:</h4>
+                            <ul>
+                                <li>Establish MoUs with agricultural research institutions</li>
+                                <li>Create partnerships with county governments for waste management</li>
+                                <li>Develop collaboration networks with other youth-led CBOs</li>
+                                <li>Organize joint workshops with health organizations on AMR</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Objectives 8-14 will follow similar pattern -->
+                <!-- I'll include the rest in a condensed format in the actual code -->
+                
+                <!-- Objective 8 -->
+                <div class="accordion-item" data-categories="health agriculture">
+                    <div class="accordion-header" id="objective8">
+                        <div class="accordion-title">
+                            <span class="accordion-number">8</span>
+                            <i class="fas fa-chart-line objective-icon"></i>
+                            Advocacy & Research
+                        </div>
+                        <span class="accordion-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="accordion-content" id="content8">
+                        <p>Undertake advocacy, research, and awareness campaigns on climate change adaptation, soil and environmental health, AMR, sustainable food systems, and related development issues.</p>
+                    </div>
+                </div>
+                
+                <!-- Objective 9 -->
+                <div class="accordion-item" data-categories="empowerment">
+                    <div class="accordion-header" id="objective9">
+                        <div class="accordion-title">
+                            <span class="accordion-number">9</span>
+                            <i class="fas fa-hand-holding-usd objective-icon"></i>
+                            Resource Mobilization
+                        </div>
+                        <span class="accordion-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="accordion-content" id="content9">
+                        <p>Mobilize financial and non-financial resources, including grants, donations, sponsorships, and partnerships, to support GAHI's programs and community projects.</p>
+                    </div>
+                </div>
+                
+                <!-- Objective 10 -->
+                <div class="accordion-item" data-categories="health empowerment">
+                    <div class="accordion-header" id="objective10">
+                        <div class="accordion-title">
+                            <span class="accordion-number">10</span>
+                            <i class="fas fa-graduation-cap objective-icon"></i>
+                            Community Education
+                        </div>
+                        <span class="accordion-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="accordion-content" id="content10">
+                        <p>Facilitate lectures, workshops, and community events on public health topics and environmental stewardship to improve community well-being.</p>
+                    </div>
+                </div>
+                
+                <!-- Objective 11 -->
+                <div class="accordion-item" data-categories="empowerment">
+                    <div class="accordion-header" id="objective11">
+                        <div class="accordion-title">
+                            <span class="accordion-number">11</span>
+                            <i class="fas fa-network-wired objective-icon"></i>
+                            Collaborative Engagement
+                        </div>
+                        <span class="accordion-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="accordion-content" id="content11">
+                        <p>Stimulate and involve other organizations (NGOs, CBOs, self-help groups) in joint initiatives that improve livelihoods and protect the environment.</p>
+                    </div>
+                </div>
+                
+                <!-- Objective 12 -->
+                <div class="accordion-item" data-categories="empowerment">
+                    <div class="accordion-header" id="objective12">
+                        <div class="accordion-title">
+                            <span class="accordion-number">12</span>
+                            <i class="fas fa-briefcase objective-icon"></i>
+                            Local Employment & Skills Development
+                        </div>
+                        <span class="accordion-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="accordion-content" id="content12">
+                        <p>Utilize local skills and labor for construction, maintenance, and repair of GAHI projects and assets to create employment and build community capacity.</p>
+                    </div>
+                </div>
+                
+                <!-- Objective 13 -->
+                <div class="accordion-item" data-categories="empowerment agriculture">
+                    <div class="accordion-header" id="objective13">
+                        <div class="accordion-title">
+                            <span class="accordion-number">13</span>
+                            <i class="fas fa-tools objective-icon"></i>
+                            Support Services & Capacity Building
+                        </div>
+                        <span class="accordion-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="accordion-content" id="content13">
+                        <p>Support the training of local farmers, youth groups and community organizations with technical assistance, mentorship and practical skills to improve productivity, livelihoods and resilience.</p>
+                    </div>
+                </div>
+                
+                <!-- Objective 14 -->
+                <div class="accordion-item" data-categories="empowerment">
+                    <div class="accordion-header" id="objective14">
+                        <div class="accordion-title">
+                            <span class="accordion-number">14</span>
+                            <i class="fas fa-cogs objective-icon"></i>
+                            General Activities
+                        </div>
+                        <span class="accordion-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="accordion-content" id="content14">
+                        <p>Perform all other lawful activities necessary, possible, or conducive to the attainment of GAHI's mission, vision and ongoing objectives.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Support Our Programs?</h2>
+            <p>Join us in transforming agricultural waste into sustainable solutions for communities across Kenya. Whether through partnership, volunteering, or donation, your support can make a real difference.</p>
+            <a href="involved.html" class="btn" style="background-color: white; color: var(--primary-green);">Get Involved</a>
+            <a href="contact.html" class="btn btn-outline" style="border-color: white; color: white;">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-leaf"></i> Green Agro Health Initiative
+                    </a>
+                    <p>A youth-led Community Based Organisation in Kenya committed to transforming agricultural waste into sustainable solutions.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="constitution.html">Constitution</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="involved.html">Get Involved</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi County, Kenya</p>
+                    <p><i class="fas fa-envelope"></i> info@gahi.org</p>
+                    <p><i class="fas fa-phone"></i> +254 700 000 000</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Green Agro Health Initiative (GAHI) - Youth-Led CBO in Kenya. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Accordion Functionality
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const isActive = header.classList.contains('active');
+                
+                // Close all accordion items
+                document.querySelectorAll('.accordion-header').forEach(h => {
+                    h.classList.remove('active');
+                    h.querySelector('.accordion-icon').innerHTML = '<i class="fas fa-chevron-down"></i>';
+                });
+                
+                document.querySelectorAll('.accordion-content').forEach(c => {
+                    c.classList.remove('active');
+                });
+                
+                // If it wasn't active, open this one
+                if (!isActive) {
+                    header.classList.add('active');
+                    content.classList.add('active');
+                    header.querySelector('.accordion-icon').innerHTML = '<i class="fas fa-chevron-up"></i>';
+                }
+            });
+        });
+        
+        // Category Filtering
+        const categoryCards = document.querySelectorAll('.category-card');
+        
+        categoryCards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Remove active class from all category cards
+                categoryCards.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked card
+                card.classList.add('active');
+                
+                const category = card.getAttribute('data-category');
+                const accordionItems = document.querySelectorAll('.accordion-item');
+                
+                if (category === 'all') {
+                    // Show all accordion items
+                    accordionItems.forEach(item => {
+                        item.style.display = 'block';
+                    });
+                } else {
+                    // Show only items with matching category
+                    accordionItems.forEach(item => {
+                        const itemCategories = item.getAttribute('data-categories');
+                        if (itemCategories && itemCategories.includes(category)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                }
+                
+                // Close all accordions when filtering
+                document.querySelectorAll('.accordion-header').forEach(h => {
+                    h.classList.remove('active');
+                    h.querySelector('.accordion-icon').innerHTML = '<i class="fas fa-chevron-down"></i>';
+                });
+                
+                document.querySelectorAll('.accordion-content').forEach(c => {
+                    c.classList.remove('active');
+                });
+            });
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Open first accordion by default
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstAccordion = document.querySelector('.accordion-header');
+            if (firstAccordion) {
+                firstAccordion.click();
+            }
+        });
+    </script>
+</body>
+</html>
